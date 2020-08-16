@@ -4,44 +4,57 @@ import { Link } from 'gatsby'
 import { breakpoints } from '../../utils/styles'
 
 export const Wrapper = styled.div`
-  background: rebeccapurple;
   margin-bottom: 1.45rem;
+  position: relative;
 `
 
-export const Container = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  padding: 1.45rem;
-  margin: 0 auto;
-  max-width: 960px;
+export const CartUl = styled.ul`
+  position: absolute;
+  top: 10px;
+  right: 20px;
+`
+
+export const SnsUl = styled.ul`
+  margin: 0;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+`
+
+export const SnsLi = styled.li`
+  list-style: none;
+  display: inline-box;
+  padding: 0 14px;
+`
+
+export const TitleDiv = styled.div`
+  text-align: center;
+  padding-top: 15px;
+`
+
+export const LogoImg = styled.img`
+  max-width: 79px;
 `
 
 export const MenuLink = styled(Link)`
-  color: white;
   text-decoration: none;
-  font-size: 2rem;
-  font-weight: bold;
-
-  @media (max-width: ${breakpoints.s}px){
-    font-size: 1.4rem
+  color: #303030;
+  font-size: 13px;
+  @media (max-width: ${breakpoints.s}px) {
+    font-size: 1.4rem;
+  }
+  &:hover {
+    color: #d4b062;
   }
 `
 
 export const CartCounter = styled.span`
-  background-color: white;
-  color: #663399;
+  background-color: #303030;
+  color: white;
   border-radius: 20px;
-  padding: 0 10px;
-  font-size: 1.2rem;
+  padding: 0 4px;
+  font-size: 0.4rem;
   float: right;
-  margin: -10px;
+  margin: -5px;
   z-index: 20;
 `
-
-    
-     
-        
-          
-            
-              
