@@ -1,7 +1,7 @@
 const path = require('path')
 
 require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`
+  path: `.env.${process.env.NODE_ENV}`,
 })
 
 module.exports = {
@@ -22,6 +22,12 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-layout`,
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -66,7 +72,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-134421805-1",
+        trackingId: 'UA-134421805-1',
         anonymize: true,
         respectDNT: true,
       },
