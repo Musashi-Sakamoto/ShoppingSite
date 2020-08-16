@@ -20,7 +20,9 @@ const TopNav = ({ siteTitle }) => {
         ) {
           nodes {
             title
-            handle
+            fields {
+              slug
+            }
           }
         }
       }
@@ -33,7 +35,7 @@ const TopNav = ({ siteTitle }) => {
   }
 
   const options = allShopifyCollection.nodes.map(n => ({
-    value: n.handle,
+    value: `/collections/${n.fields.slug}`,
     label: n.title,
   }))
 

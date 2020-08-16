@@ -17,7 +17,9 @@ const BottomNav = () => {
         ) {
           nodes {
             title
-            handle
+            fields {
+              slug
+            }
           }
         }
       }
@@ -27,9 +29,11 @@ const BottomNav = () => {
   return (
     <BottomContainer>
       <BottomMenuList>
-        {allShopifyCollection.nodes.map(node => (
-          <BottomMenuListItem>
-            <MenuLink to={node.handle}>{node.title}</MenuLink>
+        {allShopifyCollection.nodes.map((node, i) => (
+          <BottomMenuListItem key={i}>
+            <MenuLink to={`/collections/${node.fields.slug}`}>
+              {node.title}
+            </MenuLink>
           </BottomMenuListItem>
         ))}
       </BottomMenuList>
