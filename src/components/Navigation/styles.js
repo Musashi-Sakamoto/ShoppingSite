@@ -4,8 +4,8 @@ import { Link } from 'gatsby'
 import { breakpoints } from '../../utils/styles'
 
 export const Wrapper = styled.div`
-  margin-bottom: 1.45rem;
   position: relative;
+  background-color: white;
 `
 
 export const CartUl = styled.ul`
