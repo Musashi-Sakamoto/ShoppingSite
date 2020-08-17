@@ -95,7 +95,6 @@ const VideoNav = () => {
       <VideoDiv>
         <iframe
           id="player"
-          frameborder="0"
           allowFullScreen="1"
           width="100%"
           height="100%"
