@@ -6,25 +6,17 @@ import { breakpoints } from '../../utils/styles'
 export const Wrapper = styled.div`
   position: relative;
   background-color: white;
+  @media (max-width: ${breakpoints.s}px) {
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+  }
 `
 
 export const CartUl = styled.ul`
   position: absolute;
   top: 10px;
   right: 20px;
-`
-
-export const SnsUl = styled.ul`
-  margin: 0;
-  position: absolute;
-  top: 10px;
-  left: 10px;
-`
-
-export const SnsLi = styled.li`
-  list-style: none;
-  display: inline-box;
-  padding: 0 14px;
 `
 
 export const TitleDiv = styled.div`

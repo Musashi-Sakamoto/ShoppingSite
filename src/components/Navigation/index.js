@@ -4,12 +4,7 @@ import PropTypes from 'prop-types'
 import StoreContext from '~/context/StoreContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
-import {
-  faTwitter,
-  faInstagram,
-  faFacebookSquare,
-  faYoutube,
-} from '@fortawesome/free-brands-svg-icons'
+import { useMediaQuery } from 'react-responsive'
 import {
   CartCounter,
   MenuLink,
@@ -22,6 +17,8 @@ import {
 } from './styles'
 import TopNav from './TopNav'
 import BottomNav from './BottomNav'
+import SNS from './SNS'
+import { breakpoints } from '~/utils/styles'
 
 const useQuantity = () => {
   const {
@@ -34,43 +31,32 @@ const useQuantity = () => {
 
 const Navigation = ({ siteTitle }) => {
   const [hasItems, quantity] = useQuantity()
+  const isSmall = useMediaQuery({ query: `(max-width: ${breakpoints.s}px)` })
   return (
     <Wrapper>
-      <SnsUl>
-        <SnsLi>
-          <MenuLink to="/">
-            <FontAwesomeIcon icon={faTwitter} />
-          </MenuLink>
-        </SnsLi>
-        <SnsLi>
-          <MenuLink to="/">
-            <FontAwesomeIcon icon={faInstagram} />
-          </MenuLink>{' '}
-        </SnsLi>
-        <SnsLi>
-          <MenuLink to="/">
-            <FontAwesomeIcon icon={faFacebookSquare} />
-          </MenuLink>{' '}
-        </SnsLi>
-        <SnsLi>
-          <MenuLink to="/">
-            <FontAwesomeIcon icon={faYoutube} />
-          </MenuLink>{' '}
-        </SnsLi>
-      </SnsUl>
-      <CartUl>
-        <MenuLink to="/cart">
-          {hasItems && <CartCounter>{quantity}</CartCounter>}
-          <FontAwesomeIcon icon={faShoppingCart} />
-        </MenuLink>
-      </CartUl>
+      {!isSmall && (
+        <>
+          <SNS />
+          <CartUl>
+            <MenuLink to="/cart">
+              {hasItems && <CartCounter>{quantity}</CartCounter>}
+              <FontAwesomeIcon icon={faShoppingCart} />
+            </MenuLink>
+          </CartUl>
+        </>
+      )}
+
       <TitleDiv>
         <MenuLink to="/">
           <LogoImg src="/tde_no_bars.webp" alt="logo" />
         </MenuLink>
       </TitleDiv>
-      <TopNav />
-      <BottomNav />
+      {!isSmall && (
+        <>
+          <TopNav />
+          <BottomNav />
+        </>
+      )}
     </Wrapper>
   )
 }
