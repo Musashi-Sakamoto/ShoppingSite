@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import Image from 'gatsby-image'
 import styled from '@emotion/styled'
 import { Global, css } from '@emotion/core'
@@ -25,6 +26,30 @@ export const GlobalStyle = props => (
   />
 )
 
+export const Header = styled.p`
+  font-size: 0.75rem;
+  margin-bottom: 100px;
+`
+
+export const BottomLinkDiv = styled.div`
+  text-align: right;
+  padding: 80px 0 150px;
+  font-size: 0.7rem;
+`
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: black;
+`
+
+export const Container = styled.div`
+  max-width: 960px;
+  margin: 0 auto;
+  @media (max-width: ${breakpoints.s}px) {
+    margin: 0 16px;
+  }
+`
+
 export const Img = styled(Image)`
   max-width: 100 %;
   margin-left: 0;
@@ -34,11 +59,6 @@ export const Img = styled(Image)`
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-`
-
-export const Container = styled.div`
-  margin: 0 auto;
-  max-width: 960px;
 `
 
 export const TwoColumnGrid = styled.div`

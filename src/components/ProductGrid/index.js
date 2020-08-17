@@ -2,8 +2,8 @@ import React, { useContext } from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 
 import StoreContext from '~/context/StoreContext'
-import { Grid, Product, Title, PriceTag, Container, StyledLink } from './styles'
-import { Img } from '~/utils/styles'
+import { Grid, Product, Title, PriceTag } from './styles'
+import { Img, Header, BottomLinkDiv, StyledLink } from '~/utils/styles'
 
 const ProductGrid = () => {
   const {
@@ -51,38 +51,36 @@ const ProductGrid = () => {
     }).format(parseFloat(price ? price : 0))
 
   return (
-    <Container>
-      <Grid>
-        {allShopifyProduct.edges ? (
-          allShopifyProduct.edges.map(
-            ({
-              node: {
-                id,
-                handle,
-                title,
-                images: [firstImage],
-                variants: [firstVariant],
-              },
-            }) => (
-              <StyledLink to={`/product/${handle}/`} key={id}>
-                <Product>
-                  {firstImage && firstImage.localFile && (
-                    <Img
-                      fluid={firstImage.localFile.childImageSharp.fluid}
-                      alt={handle}
-                    />
-                  )}
-                  <Title>{title}</Title>
-                  <PriceTag>{getPrice(firstVariant.price)}</PriceTag>
-                </Product>
-              </StyledLink>
-            )
+    <Grid>
+      {allShopifyProduct.edges ? (
+        allShopifyProduct.edges.map(
+          ({
+            node: {
+              id,
+              handle,
+              title,
+              images: [firstImage],
+              variants: [firstVariant],
+            },
+          }) => (
+            <StyledLink to={`/product/${handle}/`} key={id}>
+              <Product>
+                {firstImage && firstImage.localFile && (
+                  <Img
+                    fluid={firstImage.localFile.childImageSharp.fluid}
+                    alt={handle}
+                  />
+                )}
+                <Title>{title}</Title>
+                <PriceTag>{getPrice(firstVariant.price)}</PriceTag>
+              </Product>
+            </StyledLink>
           )
-        ) : (
-          <p>No Products found!</p>
-        )}
-      </Grid>
-    </Container>
+        )
+      ) : (
+        <p>No Products found!</p>
+      )}
+    </Grid>
   )
 }
 
