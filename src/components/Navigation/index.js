@@ -34,12 +34,6 @@ const useQuantity = () => {
 
 const Navigation = ({ siteTitle }) => {
   const [hasItems, quantity] = useQuantity()
-  const options = [
-    { value: 'chocolate', label: 'Chocolate' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' },
-  ]
-  const defaultOption = options[0]
   return (
     <Wrapper>
       <SnsUl>
