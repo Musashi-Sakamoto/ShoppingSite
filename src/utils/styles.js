@@ -34,7 +34,6 @@ export const Img = styled(Image)`
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
 `
 
 export const Container = styled.div`
