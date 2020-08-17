@@ -26,7 +26,7 @@ export const Label = styled.span`
   left: 16px;
   font-size: 12px;
   color: #bbb;
-  transition: color 1s, background-color 1s;
+  transition: color 2s, background-color 2s;
 `
 
 export const Item = styled.div`
