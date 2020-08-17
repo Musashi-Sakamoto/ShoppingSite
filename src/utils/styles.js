@@ -45,8 +45,11 @@ export const StyledLink = styled(Link)`
 export const Container = styled.div`
   max-width: 960px;
   margin: 0 auto;
+  @media (max-width: ${breakpoints.l}px) {
+    padding: 0 100px;
+  }
   @media (max-width: ${breakpoints.s}px) {
-    margin: 0 16px;
+    padding: 0 16px;
   }
 `
 
