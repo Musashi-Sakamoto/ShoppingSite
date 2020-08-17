@@ -13,6 +13,14 @@ export const Wrapper = styled.div`
   }
 `
 
+export const BarButton = styled.button`
+  position: absolute;
+  top: 18px;
+  right: 10px;
+  font-size: 1.5rem;
+  border: none;
+`
+
 export const CartUl = styled.ul`
   position: absolute;
   top: 10px;

@@ -3,8 +3,9 @@ import reduce from 'lodash/reduce'
 import PropTypes from 'prop-types'
 import StoreContext from '~/context/StoreContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import { faShoppingCart, faBars } from '@fortawesome/free-solid-svg-icons'
 import { useMediaQuery } from 'react-responsive'
+import Sidebar from 'react-sidebar'
 import {
   CartCounter,
   MenuLink,
@@ -12,8 +13,7 @@ import {
   TitleDiv,
   LogoImg,
   CartUl,
-  SnsLi,
-  SnsUl,
+  BarButton,
 } from './styles'
 import TopNav from './TopNav'
 import BottomNav from './BottomNav'
@@ -50,7 +50,13 @@ const Navigation = ({ siteTitle }) => {
         <MenuLink to="/">
           <LogoImg src="/tde_no_bars.webp" alt="logo" />
         </MenuLink>
+        {isSmall && (
+          <BarButton>
+            <FontAwesomeIcon width={75} icon={faBars} />
+          </BarButton>
+        )}
       </TitleDiv>
+
       {!isSmall && (
         <>
           <TopNav />
