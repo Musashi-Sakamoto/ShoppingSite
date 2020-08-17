@@ -63,6 +63,9 @@ const TopNav = ({ siteTitle }) => {
                   color: '#d4b062',
                 },
               }),
+              menuPortal: provided => ({
+                top: '0',
+              }),
               menu: provided => ({
                 ...provided,
                 left: '20%',
