@@ -1,11 +1,10 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import reduce from 'lodash/reduce'
 import PropTypes from 'prop-types'
 import StoreContext from '~/context/StoreContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart, faBars } from '@fortawesome/free-solid-svg-icons'
 import { useMediaQuery } from 'react-responsive'
-import Sidebar from 'react-sidebar'
 import {
   CartCounter,
   MenuLink,
@@ -29,7 +28,7 @@ const useQuantity = () => {
   return [total !== 0, total]
 }
 
-const Navigation = ({ siteTitle }) => {
+const Navigation = ({ setIsSideBarOpen }) => {
   const [hasItems, quantity] = useQuantity()
   const isSmall = useMediaQuery({ query: `(max-width: ${breakpoints.s}px)` })
   return (
@@ -51,8 +50,8 @@ const Navigation = ({ siteTitle }) => {
           <LogoImg src="/tde_no_bars.webp" alt="logo" />
         </MenuLink>
         {isSmall && (
-          <BarButton>
-            <FontAwesomeIcon width={75} icon={faBars} />
+          <BarButton onClick={() => setIsSideBarOpen(true)}>
+            <FontAwesomeIcon icon={faBars} />
           </BarButton>
         )}
       </TitleDiv>
@@ -68,11 +67,7 @@ const Navigation = ({ siteTitle }) => {
 }
 
 Navigation.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Navigation.defaultProps = {
-  siteTitle: ``,
+  setIsSideBarOpen: PropTypes.func.isRequired,
 }
 
 export default Navigation

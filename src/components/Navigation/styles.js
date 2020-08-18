@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
   @media (max-width: ${breakpoints.s}px) {
     position: fixed;
     width: 100%;
-    z-index: 9999;
+    z-index: 1;
   }
 `
 
@@ -19,6 +19,7 @@ export const BarButton = styled.button`
   right: 10px;
   font-size: 1.5rem;
   border: none;
+  outline: none;
 `
 
 export const CartUl = styled.ul`
