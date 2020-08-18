@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import styled from '@emotion/styled'
+import Sidebar from 'react-sidebar'
 
 import ContextProvider from '~/provider/ContextProvider'
 
 import { GlobalStyle } from '~/utils/styles'
 import Navigation from '~/components/Navigation'
+import SideBar from '~/components/SideBar'
 import Footer from '~/components/Footer'
 
 const Wrapper = styled.div`
@@ -15,6 +17,7 @@ const Wrapper = styled.div`
 `
 
 const Layout = ({ children }) => {
+  const [isSideBarOpen, setIsSidebarOpen] = useState(false)
   return (
     <ContextProvider>
       <GlobalStyle />
@@ -29,11 +32,22 @@ const Layout = ({ children }) => {
           }
         `}
         render={data => (
-          <>
-            <Navigation siteTitle={data.site.siteMetadata.title} />
+          <Sidebar
+            pullRight
+            sidebar={<SideBar setIsSideBarOpen={setIsSidebarOpen} />}
+            open={isSideBarOpen}
+            onSetOpen={setIsSidebarOpen}
+            styles={{
+              sidebar: { width: '98%', height: '100%' },
+            }}
+          >
+            <Navigation
+              isSideBarOpen={isSideBarOpen}
+              setIsSideBarOpen={setIsSidebarOpen}
+            />
             <Wrapper>{children}</Wrapper>
             <Footer />
-          </>
+          </Sidebar>
         )}
       />
     </ContextProvider>
