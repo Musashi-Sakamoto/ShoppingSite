@@ -1,8 +1,9 @@
 import React, { useRef } from 'react'
 import Select from 'react-select'
+import Collapsible from 'react-collapsible'
 import { useStaticQuery, graphql, navigate } from 'gatsby'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import { faTimes, faAngleDown } from '@fortawesome/free-solid-svg-icons'
 import PropTypes from 'prop-types'
 
 import {
@@ -12,14 +13,12 @@ import {
   SideBarList,
   BarButton,
   HR,
+  CollapsibleTitle,
   SideBarListItemForPolicies,
 } from './styles'
 
 const SideBar = ({ setIsSideBarOpen }) => {
   const selectRef = useRef(null)
-  const onMouseOver = () => {
-    selectRef.current.focus()
-  }
 
   const { allShopifyCollection } = useStaticQuery(
     graphql`
@@ -58,7 +57,21 @@ const SideBar = ({ setIsSideBarOpen }) => {
           <SideBarLink to="/collections/new-arrivals">NEW ARRIVALS</SideBarLink>
         </SideBarListItem>
         <SideBarListItem>
-          <SideBarLink to="/collections/new-arrivals">ARTISTS</SideBarLink>
+          <Collapsible
+            transitionTime={100}
+            transitionCloseTime={100}
+            trigger={
+              <CollapsibleTitle>
+                ARTISTS <FontAwesomeIcon icon={faAngleDown} />
+              </CollapsibleTitle>
+            }
+          >
+            {options.map(option => (
+              <SideBarListItem>
+                <SideBarLink to={option.value}>{option.label}</SideBarLink>
+              </SideBarListItem>
+            ))}
+          </Collapsible>
         </SideBarListItem>
         <SideBarListItem>
           <SideBarLink to="/">NEWS</SideBarLink>

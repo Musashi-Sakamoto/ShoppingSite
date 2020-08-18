@@ -44,3 +44,7 @@ export const HR = styled.hr`
   color: black;
   height: 2px;
 `
+
+export const CollapsibleTitle = styled.p`
+  font-size: 0.8rem;
+`
