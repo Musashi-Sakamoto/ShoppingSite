@@ -29,12 +29,22 @@ export const GlobalStyle = props => (
 export const Header = styled.p`
   font-size: 0.75rem;
   margin-bottom: 100px;
+  @media (max-width: ${breakpoints.s}px) {
+    font-size: 0.8rem;
+    margin: 50px;
+    text-align: center;
+  }
 `
 
 export const BottomLinkDiv = styled.div`
   text-align: right;
   padding: 80px 0 150px;
   font-size: 0.7rem;
+  @media (max-width: ${breakpoints.s}px) {
+    text-align: center;
+    padding: 40px 0 80px;
+    font-size: 0.8rem;
+  }
 `
 
 export const StyledLink = styled(Link)`

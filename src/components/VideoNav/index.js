@@ -9,8 +9,11 @@ import {
   Image,
   Label,
 } from './styles'
+import { useMediaQuery } from 'react-responsive'
+import { breakpoints } from '../../utils/styles'
 
 const VideoNav = () => {
+  const isSmall = useMediaQuery({ query: `(max-width: ${breakpoints.s}px)` })
   const { allShopifyCollection } = useStaticQuery(
     graphql`
       query {
@@ -92,17 +95,20 @@ const VideoNav = () => {
           </Link>
         </Item>
       </FlexContainer>
-      <VideoDiv>
-        <iframe
-          id="player"
-          allowFullScreen="1"
-          width="100%"
-          height="100%"
-          src="https://www.youtube.com/embed/ue5oHmUGiMM?autoplay=1&amp;controls=0&amp;loop=1&amp;showinfo=0&amp;autohide=1&amp;rel=0&amp;mute=1&amp;index=4&amp;enablejsapi=1&amp;widgetid=1&amp;modestbranding=1&amp;playlist=ue5oHmUGiMM"
-          frameBorder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        ></iframe>
-      </VideoDiv>
+      {!isSmall && (
+        <VideoDiv>
+          <iframe
+            title="youtube"
+            id="player"
+            allowFullScreen="1"
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/ue5oHmUGiMM?autoplay=1&amp;controls=0&amp;loop=1&amp;showinfo=0&amp;autohide=1&amp;rel=0&amp;mute=1&amp;index=4&amp;enablejsapi=1&amp;widgetid=1&amp;modestbranding=1&amp;playlist=ue5oHmUGiMM"
+            frameBorder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          ></iframe>
+        </VideoDiv>
+      )}
     </Container>
   )
 }

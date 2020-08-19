@@ -1,5 +1,4 @@
 import styled from '@emotion/styled/macro'
-import { Link } from 'gatsby'
 import { Img } from '~/utils/styles'
 
 import { breakpoints } from '../../utils/styles'
@@ -7,26 +6,48 @@ import { breakpoints } from '../../utils/styles'
 export const Container = styled.div`
   position: relative;
   height: 760px;
+  @media (max-width: ${breakpoints.s}px) {
+    height: auto;
+    padding-top: 75px;
+  }
 `
 
 export const Image = styled(Img)`
   height: 350px;
   opacity: 0;
   transition: opacity 1s;
+  @media (max-width: ${breakpoints.s}px) {
+    opacity: 1;
+    height: 160px;
+    width: 100%;
+  }
 `
 
 export const FlexContainer = styled.div`
   display: flex;
+  @media (max-width: ${breakpoints.s}px) {
+    flex-direction: column;
+  }
 `
 
 export const Label = styled.span`
   position: absolute;
-  padding: 5px;
+  padding: 8px;
   top: 16px;
   left: 16px;
   font-size: 12px;
   color: #bbb;
   transition: color 2s, background-color 2s;
+  @media (max-width: ${breakpoints.s}px) {
+    color: black;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    font-size: 14px;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
 `
 
 export const Item = styled.div`
@@ -39,8 +60,13 @@ export const Item = styled.div`
     color: black;
     background-color: white;
   }
-  &:hover ${Image} {
-    opacity: 1;
+  @media (min-width: ${breakpoints.s}px) {
+    &:hover ${Image} {
+      opacity: 1;
+    }
+  }
+  @media (max-width: ${breakpoints.s}px) {
+    height: auto;
   }
 `
 
