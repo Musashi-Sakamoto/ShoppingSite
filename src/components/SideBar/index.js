@@ -18,8 +18,6 @@ import {
 } from './styles'
 
 const SideBar = ({ setIsSideBarOpen }) => {
-  const selectRef = useRef(null)
-
   const { allShopifyCollection } = useStaticQuery(
     graphql`
       query {
@@ -66,11 +64,13 @@ const SideBar = ({ setIsSideBarOpen }) => {
               </CollapsibleTitle>
             }
           >
-            {options.map(option => (
-              <SideBarListItem>
-                <SideBarLink to={option.value}>{option.label}</SideBarLink>
-              </SideBarListItem>
-            ))}
+            <SideBarList>
+              {options.map(option => (
+                <SideBarListItem>
+                  <SideBarLink to={option.value}>{option.label}</SideBarLink>
+                </SideBarListItem>
+              ))}
+            </SideBarList>
           </Collapsible>
         </SideBarListItem>
         <SideBarListItem>
