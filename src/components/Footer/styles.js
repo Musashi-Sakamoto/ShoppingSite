@@ -20,6 +20,9 @@ export const FooterLi = styled.li`
   display: inline-block;
   min-width: 100px;
   text-align: center;
+  @media (max-width: ${breakpoints.s}px) {
+    min-width: 70px;
+  }
 `
 export const FooterLink = styled.a`
   font-size: 0.6rem;

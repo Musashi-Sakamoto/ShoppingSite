@@ -8,6 +8,14 @@ export const SnsUl = styled.ul`
   position: absolute;
   top: 10px;
   left: 10px;
+  @media (max-width: ${breakpoints.s}px) {
+    padding-top: 8px;
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-around;
+  }
 `
 
 export const SnsLi = styled.li`

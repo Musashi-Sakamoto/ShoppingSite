@@ -57,7 +57,7 @@
     "build": "gatsby build",
     "dev": "gatsby develop",
     "clean": "gatsby clean",
-    "start": "gatsby serve",
+    "start": "gatsby build && gatsby serve",
     "format": "prettier --write \"src/**/*.js\"",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
