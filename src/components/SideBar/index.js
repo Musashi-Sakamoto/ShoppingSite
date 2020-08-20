@@ -1,5 +1,4 @@
 import React, { useRef } from 'react'
-import Select from 'react-select'
 import Collapsible from 'react-collapsible'
 import { useStaticQuery, graphql, navigate } from 'gatsby'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -21,9 +20,7 @@ const SideBar = ({ setIsSideBarOpen }) => {
   const { allShopifyCollection } = useStaticQuery(
     graphql`
       query {
-        allShopifyCollection(
-          filter: { handle: { regex: "/^artists-[a-z0-9]+/" } }
-        ) {
+        allShopifyCollection {
           nodes {
             title
             fields {
@@ -65,8 +62,8 @@ const SideBar = ({ setIsSideBarOpen }) => {
             }
           >
             <SideBarList>
-              {options.map(option => (
-                <SideBarListItem>
+              {options.map((option, i) => (
+                <SideBarListItem key={i}>
                   <SideBarLink to={option.value}>{option.label}</SideBarLink>
                 </SideBarListItem>
               ))}

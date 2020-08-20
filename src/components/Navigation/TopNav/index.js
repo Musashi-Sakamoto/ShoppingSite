@@ -15,9 +15,7 @@ const TopNav = ({ siteTitle }) => {
   const { allShopifyCollection } = useStaticQuery(
     graphql`
       query {
-        allShopifyCollection(
-          filter: { handle: { regex: "/^categories-[a-z0-9]+/" } }
-        ) {
+        allShopifyCollection {
           nodes {
             title
             fields {

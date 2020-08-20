@@ -19,8 +19,14 @@ export const GlobalStyle = props => (
         margin: 0;
       }
       html {
+        box-sizing: border-box;
         -ms-text-size-adjust: 100%;
         -webkit-text-size-adjust: 100%;
+      }
+      *,
+      *::before,
+      *::after {
+        boxi-sizing: inherit;
       }
     `}
   />

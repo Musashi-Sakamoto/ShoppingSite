@@ -8,7 +8,6 @@ export const Container = styled.div`
   height: 760px;
   @media (max-width: ${breakpoints.s}px) {
     height: auto;
-    padding-top: 75px;
   }
 `
 
