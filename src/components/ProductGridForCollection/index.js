@@ -19,7 +19,7 @@ const ProductGridForCollection = ({ collection }) => {
     }).format(parseFloat(price ? price : 0))
 
   return (
-    <Grid style={{ flexGrow: 1 }}>
+    <Grid>
       {products ? (
         products.map(
           ({

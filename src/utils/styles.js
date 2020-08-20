@@ -44,7 +44,7 @@ export const Header = styled.p`
 
 export const BottomLinkDiv = styled.div`
   text-align: right;
-  padding: 80px 0 150px;
+  padding-top: 80px;
   font-size: 0.7rem;
   @media (max-width: ${breakpoints.s}px) {
     text-align: center;
@@ -61,6 +61,7 @@ export const StyledLink = styled(Link)`
 export const Container = styled.div`
   max-width: 960px;
   margin: 0 auto;
+  padding-bottom: 150px;
   @media (max-width: ${breakpoints.l}px) {
     padding: 0 100px;
   }

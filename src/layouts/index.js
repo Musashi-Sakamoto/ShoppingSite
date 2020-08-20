@@ -15,6 +15,7 @@ import { breakpoints } from '~/utils/styles'
 const Wrapper = styled.div`
   margin: 0 auto;
   padding-bottom: 1.45rem;
+  min-height: 80vh;
   @media (max-width: ${breakpoints.s}px) {
     padding-top: 75px;
   }

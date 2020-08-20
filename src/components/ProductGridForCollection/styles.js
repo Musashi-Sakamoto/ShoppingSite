@@ -3,8 +3,9 @@ import styled from '@emotion/styled'
 import { breakpoints } from '~/utils/styles'
 
 export const Grid = styled.div`
+  padding: 60px 0;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 2.5rem;
   @media (max-width: ${breakpoints.m}px) {
     grid-template-columns: repeat(3, 1fr);
