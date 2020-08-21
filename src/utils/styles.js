@@ -35,7 +35,7 @@ export const GlobalStyle = props => (
 export const Header = styled.p`
   font-size: 0.75rem;
   margin-bottom: 100px;
-  @media (max-width: ${breakpoints.s}px) {
+  @media (max-width: ${breakpoints.m}px) {
     font-size: 0.8rem;
     margin: 50px;
     text-align: center;
@@ -46,7 +46,7 @@ export const BottomLinkDiv = styled.div`
   text-align: right;
   padding-top: 80px;
   font-size: 0.7rem;
-  @media (max-width: ${breakpoints.s}px) {
+  @media (max-width: ${breakpoints.m}px) {
     text-align: center;
     padding: 40px 0 80px;
     font-size: 0.8rem;
@@ -86,7 +86,7 @@ export const Container = styled.div`
   @media (max-width: ${breakpoints.l}px) {
     padding: 0 100px;
   }
-  @media (max-width: ${breakpoints.s}px) {
+  @media (max-width: ${breakpoints.m}px) {
     padding: 0 16px;
   }
 `

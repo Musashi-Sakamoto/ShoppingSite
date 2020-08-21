@@ -20,7 +20,7 @@ export const MenuLink = styled(Link)`
   text-decoration: none;
   color: #303030;
   font-size: 13px;
-  @media (max-width: ${breakpoints.s}px) {
+  @media (max-width: ${breakpoints.m}px) {
     font-size: 1.4rem;
   }
   &:hover {

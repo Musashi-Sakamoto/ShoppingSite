@@ -30,7 +30,7 @@ const useQuantity = () => {
 
 const Navigation = ({ setIsSideBarOpen }) => {
   const [hasItems, quantity] = useQuantity()
-  const isSmall = useMediaQuery({ query: `(max-width: ${breakpoints.s}px)` })
+  const isSmall = useMediaQuery({ query: `(max-width: ${breakpoints.m}px)` })
   return (
     <Wrapper>
       {!isSmall && (

@@ -20,7 +20,7 @@ export const FooterLi = styled.li`
   display: inline-block;
   min-width: 100px;
   text-align: center;
-  @media (max-width: ${breakpoints.s}px) {
+  @media (max-width: ${breakpoints.m}px) {
     min-width: 70px;
   }
 `
