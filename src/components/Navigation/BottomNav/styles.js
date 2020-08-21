@@ -9,7 +9,9 @@ export const BottomContainer = styled.div`
   background-color: #f2f2f2;
 `
 
-export const BottomMenuList = styled.ul``
+export const BottomMenuList = styled.ul`
+  margin: 0;
+`
 
 export const BottomMenuListItem = styled.li`
   list-style: none;
