@@ -25,6 +25,11 @@ export const TwoColumnGrid = styled.div`
   @media (max-width: ${breakpoints.l}px) {
     display: block;
   }
+
+  @media (max-width: ${breakpoints.m}px) {
+    padding-top: 10px;
+    text-align: center;
+  }
 `
 
 export const GridLeft = styled.div`

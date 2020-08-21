@@ -13,6 +13,9 @@ import {
   QuantityMinusButton,
   Quantity,
   QuantityPlusButton,
+  VariantSection,
+  VariantSelect,
+  AddCartButton,
 } from './styles'
 
 const ProductForm = ({ product }) => {
@@ -133,9 +136,9 @@ const ProductForm = ({ product }) => {
       </Quantity>
 
       {options.map(({ id, name, values }, index) => (
-        <React.Fragment key={id}>
-          <label htmlFor={name}>{name} </label>
-          <select
+        <VariantSection key={id}>
+          <Label htmlFor={name}>{name} </Label>
+          <VariantSelect
             name={name}
             key={id}
             onChange={event => handleOptionChange(index, event)}
@@ -149,18 +152,18 @@ const ProductForm = ({ product }) => {
                 {value}
               </option>
             ))}
-          </select>
+          </VariantSelect>
           <br />
-        </React.Fragment>
+        </VariantSection>
       ))}
       <br />
-      <button
+      <AddCartButton
         type="submit"
         disabled={!available || adding}
         onClick={handleAddToCart}
       >
-        Add to Cart
-      </button>
+        ADD TO CART
+      </AddCartButton>
       {!available && <p>This Product is out of Stock!</p>}
     </>
   )
