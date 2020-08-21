@@ -14,7 +14,7 @@ const IndexPage = () => (
       <Header>NEW ARRIVALS</Header>
       <ProductGrid />
       <BottomLinkDiv>
-        <StyledLink to="/collections/new-arrivals">
+        <StyledLink to="/collections/new-arrival">
           VIEW ALL <FontAwesomeIcon icon={faAngleRight} />
         </StyledLink>
       </BottomLinkDiv>

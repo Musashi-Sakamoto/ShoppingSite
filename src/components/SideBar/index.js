@@ -49,7 +49,7 @@ const SideBar = ({ setIsSideBarOpen }) => {
       </BarButton>
       <SideBarList>
         <SideBarListItem>
-          <SideBarLink to="/collections/new-arrivals">NEW ARRIVALS</SideBarLink>
+          <SideBarLink to="/collections/new-arrival">NEW ARRIVALS</SideBarLink>
         </SideBarListItem>
         <SideBarListItem>
           <Collapsible
