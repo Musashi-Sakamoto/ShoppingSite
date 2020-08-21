@@ -12,9 +12,7 @@ const BottomNav = () => {
   const { allShopifyCollection } = useStaticQuery(
     graphql`
       query {
-        allShopifyCollection(
-          filter: { handle: { regex: "/^artists-[a-z0-9]+/" } }
-        ) {
+        allShopifyCollection {
           nodes {
             title
             fields {
