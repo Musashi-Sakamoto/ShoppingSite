@@ -12,12 +12,10 @@ const BottomNav = () => {
   const { allShopifyCollection } = useStaticQuery(
     graphql`
       query {
-        allShopifyCollection {
+        allShopifyCollection(filter: { handle: { ne: "new-arrival" } }) {
           nodes {
             title
-            fields {
-              slug
-            }
+            handle
           }
         }
       }
@@ -29,9 +27,7 @@ const BottomNav = () => {
       <BottomMenuList>
         {allShopifyCollection.nodes.map((node, i) => (
           <BottomMenuListItem key={i}>
-            <MenuLink to={`/collections/${node.fields.slug}`}>
-              {node.title}
-            </MenuLink>
+            <MenuLink to={`/collections/${node.handle}`}>{node.title}</MenuLink>
           </BottomMenuListItem>
         ))}
       </BottomMenuList>

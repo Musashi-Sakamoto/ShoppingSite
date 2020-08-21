@@ -6,7 +6,7 @@ import { breakpoints } from '../../utils/styles'
 export const Wrapper = styled.div`
   position: relative;
   background-color: white;
-  @media (max-width: ${breakpoints.s}px) {
+  @media (max-width: ${breakpoints.m}px) {
     position: fixed;
     width: 100%;
     z-index: 1;
@@ -41,7 +41,7 @@ export const MenuLink = styled(Link)`
   text-decoration: none;
   color: #303030;
   font-size: 13px;
-  @media (max-width: ${breakpoints.s}px) {
+  @media (max-width: ${breakpoints.m}px) {
     font-size: 1.4rem;
   }
   &:hover {

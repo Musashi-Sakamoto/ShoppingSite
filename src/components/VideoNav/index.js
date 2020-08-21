@@ -13,7 +13,7 @@ import { useMediaQuery } from 'react-responsive'
 import { breakpoints } from '../../utils/styles'
 
 const VideoNav = () => {
-  const isSmall = useMediaQuery({ query: `(max-width: ${breakpoints.s}px)` })
+  const isSmall = useMediaQuery({ query: `(max-width: ${breakpoints.m}px)` })
   const { allShopifyCollection } = useStaticQuery(
     graphql`
       query {

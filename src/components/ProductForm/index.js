@@ -5,6 +5,19 @@ import PropTypes from 'prop-types'
 
 import StoreContext from '~/context/StoreContext'
 
+import {
+  PriceTag,
+  ExtraInfo,
+  Label,
+  QuantityInput,
+  QuantityMinusButton,
+  Quantity,
+  QuantityPlusButton,
+  VariantSection,
+  VariantSelect,
+  AddCartButton,
+} from './styles'
+
 const ProductForm = ({ product }) => {
   const {
     options,
@@ -97,11 +110,35 @@ const ProductForm = ({ product }) => {
 
   return (
     <>
-      <h3>{price}</h3>
+      <ExtraInfo>ALL SALES ARE FINAL</ExtraInfo>
+      <PriceTag>{price}</PriceTag>
+      <Label htmlFor="quantity">QUANTITY</Label>
+      <Quantity>
+        <QuantityMinusButton
+          onClick={() => setQuantity(quantity > 1 ? quantity - 1 : 1)}
+        >
+          -
+        </QuantityMinusButton>
+        <QuantityInput
+          type="number"
+          id="quantity"
+          name="quantity"
+          min="1"
+          step="1"
+          onChange={handleQuantityChange}
+          value={quantity}
+        />
+        <QuantityPlusButton
+          onClick={() => setQuantity(quantity ? quantity + 1 : 1)}
+        >
+          +
+        </QuantityPlusButton>
+      </Quantity>
+
       {options.map(({ id, name, values }, index) => (
-        <React.Fragment key={id}>
-          <label htmlFor={name}>{name} </label>
-          <select
+        <VariantSection key={id}>
+          <Label htmlFor={name}>{name} </Label>
+          <VariantSelect
             name={name}
             key={id}
             onChange={event => handleOptionChange(index, event)}
@@ -115,28 +152,18 @@ const ProductForm = ({ product }) => {
                 {value}
               </option>
             ))}
-          </select>
+          </VariantSelect>
           <br />
-        </React.Fragment>
+        </VariantSection>
       ))}
-      <label htmlFor="quantity">Quantity </label>
-      <input
-        type="number"
-        id="quantity"
-        name="quantity"
-        min="1"
-        step="1"
-        onChange={handleQuantityChange}
-        value={quantity}
-      />
       <br />
-      <button
+      <AddCartButton
         type="submit"
         disabled={!available || adding}
         onClick={handleAddToCart}
       >
-        Add to Cart
-      </button>
+        ADD TO CART
+      </AddCartButton>
       {!available && <p>This Product is out of Stock!</p>}
     </>
   )

@@ -6,7 +6,7 @@ import { breakpoints } from '../../utils/styles'
 export const Container = styled.div`
   position: relative;
   height: 760px;
-  @media (max-width: ${breakpoints.s}px) {
+  @media (max-width: ${breakpoints.m}px) {
     height: auto;
   }
 `
@@ -15,7 +15,7 @@ export const Image = styled(Img)`
   height: 350px;
   opacity: 0;
   transition: opacity 1s;
-  @media (max-width: ${breakpoints.s}px) {
+  @media (max-width: ${breakpoints.m}px) {
     opacity: 1;
     height: 160px;
     width: 100%;
@@ -24,7 +24,7 @@ export const Image = styled(Img)`
 
 export const FlexContainer = styled.div`
   display: flex;
-  @media (max-width: ${breakpoints.s}px) {
+  @media (max-width: ${breakpoints.m}px) {
     flex-direction: column;
   }
 `
@@ -37,7 +37,7 @@ export const Label = styled.span`
   font-size: 12px;
   color: #bbb;
   transition: color 2s, background-color 2s;
-  @media (max-width: ${breakpoints.s}px) {
+  @media (max-width: ${breakpoints.m}px) {
     color: black;
     background-color: white;
     top: 50%;
@@ -59,12 +59,12 @@ export const Item = styled.div`
     color: black;
     background-color: white;
   }
-  @media (min-width: ${breakpoints.s}px) {
+  @media (min-width: ${breakpoints.m}px) {
     &:hover ${Image} {
       opacity: 1;
     }
   }
-  @media (max-width: ${breakpoints.s}px) {
+  @media (max-width: ${breakpoints.m}px) {
     height: auto;
   }
 `

@@ -8,7 +8,7 @@ export const SnsUl = styled.ul`
   position: absolute;
   top: 10px;
   left: 10px;
-  @media (max-width: ${breakpoints.s}px) {
+  @media (max-width: ${breakpoints.m}px) {
     padding-top: 8px;
     position: relative;
     top: 0;
@@ -28,7 +28,7 @@ export const MenuLink = styled(Link)`
   text-decoration: none;
   color: #303030;
   font-size: 13px;
-  @media (max-width: ${breakpoints.s}px) {
+  @media (max-width: ${breakpoints.m}px) {
     font-size: 1.4rem;
   }
   &:hover {

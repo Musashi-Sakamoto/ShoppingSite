@@ -3,16 +3,13 @@ import { graphql } from 'gatsby'
 
 import SEO from '~/components/seo'
 import ProductForm from '~/components/ProductForm'
+import { Img, Container } from '~/utils/styles'
 import {
-  Img,
-  Container,
+  ProductTitle,
+  ProductDescription,
   TwoColumnGrid,
   GridLeft,
   GridRight,
-} from '~/utils/styles'
-import {
-  ProductTitle,
-  ProductDescription
 } from './styles'
 
 const ProductPage = ({ data }) => {
