@@ -1,6 +1,6 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import Collapsible from 'react-collapsible'
-import { useStaticQuery, graphql, navigate } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes, faAngleDown } from '@fortawesome/free-solid-svg-icons'
 import PropTypes from 'prop-types'
@@ -31,11 +31,6 @@ const SideBar = ({ setIsSideBarOpen }) => {
       }
     `
   )
-
-  const handleChange = async option => {
-    console.log(option)
-    await navigate(option.value)
-  }
 
   const options = allShopifyCollection.nodes.map(n => ({
     value: `/collections/${n.fields.slug}`,

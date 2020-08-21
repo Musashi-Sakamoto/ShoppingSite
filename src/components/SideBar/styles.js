@@ -1,8 +1,6 @@
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 
-import { breakpoints } from '../../utils/styles'
-
 export const Container = styled.div`
   background: white;
   z-index: 10000;
