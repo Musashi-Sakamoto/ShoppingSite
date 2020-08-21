@@ -5,6 +5,16 @@ import PropTypes from 'prop-types'
 
 import StoreContext from '~/context/StoreContext'
 
+import {
+  PriceTag,
+  ExtraInfo,
+  Label,
+  QuantityInput,
+  QuantityMinusButton,
+  Quantity,
+  QuantityPlusButton,
+} from './styles'
+
 const ProductForm = ({ product }) => {
   const {
     options,
@@ -97,7 +107,31 @@ const ProductForm = ({ product }) => {
 
   return (
     <>
-      <h3>{price}</h3>
+      <ExtraInfo>ALL SALES ARE FINAL</ExtraInfo>
+      <PriceTag>{price}</PriceTag>
+      <Label htmlFor="quantity">QUANTITY</Label>
+      <Quantity>
+        <QuantityMinusButton
+          onClick={() => setQuantity(quantity > 1 ? quantity - 1 : 1)}
+        >
+          -
+        </QuantityMinusButton>
+        <QuantityInput
+          type="number"
+          id="quantity"
+          name="quantity"
+          min="1"
+          step="1"
+          onChange={handleQuantityChange}
+          value={quantity}
+        />
+        <QuantityPlusButton
+          onClick={() => setQuantity(quantity ? quantity + 1 : 1)}
+        >
+          +
+        </QuantityPlusButton>
+      </Quantity>
+
       {options.map(({ id, name, values }, index) => (
         <React.Fragment key={id}>
           <label htmlFor={name}>{name} </label>
@@ -119,16 +153,6 @@ const ProductForm = ({ product }) => {
           <br />
         </React.Fragment>
       ))}
-      <label htmlFor="quantity">Quantity </label>
-      <input
-        type="number"
-        id="quantity"
-        name="quantity"
-        min="1"
-        step="1"
-        onChange={handleQuantityChange}
-        value={quantity}
-      />
       <br />
       <button
         type="submit"

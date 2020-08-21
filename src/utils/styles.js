@@ -58,18 +58,6 @@ export const StyledLink = styled(Link)`
   color: black;
 `
 
-export const Container = styled.div`
-  max-width: 960px;
-  margin: 0 auto;
-  padding-bottom: 150px;
-  @media (max-width: ${breakpoints.l}px) {
-    padding: 0 100px;
-  }
-  @media (max-width: ${breakpoints.s}px) {
-    padding: 0 16px;
-  }
-`
-
 export const Img = styled(Image)`
   max-width: 100 %;
   margin-left: 0;
@@ -81,25 +69,6 @@ export const Img = styled(Image)`
   padding-top: 0;
 `
 
-export const TwoColumnGrid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 2rem 1fr;
-  grid-template-rows: 1auto;
-  grid-template-areas: 'left . right';
-
-  @media (max-width: ${breakpoints.l}px) {
-    display: block;
-  }
-`
-
-export const GridLeft = styled.div`
-  grid-area: left;
-`
-
-export const GridRight = styled.div`
-  grid-area: right;
-`
-
 export const MainContent = styled.main`
   margin-top: 80px;
   margin-bottom: 40px;
@@ -107,5 +76,17 @@ export const MainContent = styled.main`
   @media (max-width: ${breakpoints.l}px) {
     margin-top: 40px;
     margin-bottom: 20px;
+  }
+`
+
+export const Container = styled.div`
+  max-width: 960px;
+  margin: 0 auto;
+  padding-bottom: 150px;
+  @media (max-width: ${breakpoints.l}px) {
+    padding: 0 100px;
+  }
+  @media (max-width: ${breakpoints.s}px) {
+    padding: 0 16px;
   }
 `
