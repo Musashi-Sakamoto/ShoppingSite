@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import StoreContext from '~/context/StoreContext'
 import { Grid, Product, Title, PriceTag } from './styles'
-import { Img, Header, BottomLinkDiv, StyledLink } from '~/utils/styles'
+import { Img, StyledLink } from '~/utils/styles'
 
 const ProductGridForCollection = ({ collection }) => {
   const {

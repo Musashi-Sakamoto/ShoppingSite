@@ -9,11 +9,13 @@ const CollectionPage = ({ data }) => {
   return (
     <>
       <SEO title={collection.title} description={collection.description} />
-      <Img
-        objectPosition="10% 10%"
-        fluid={collection.image.localFile.childImageSharp.fluid}
-        alt={collection.fields.slug}
-      />
+      {collection.fields.slug !== 'new-arrival' && (
+        <Img
+          objectPosition="10% 10%"
+          fluid={collection.image.localFile.childImageSharp.fluid}
+          alt={collection.fields.slug}
+        />
+      )}
       <Container>
         <ProductGridForCollection collection={collection} />
       </Container>
