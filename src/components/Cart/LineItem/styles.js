@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import { breakpoints } from '~/utils/styles'
 
 export const Wrapper = styled.div`
   border-top: 1px solid lightgrey;
@@ -7,12 +8,16 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  min-height: 116px;
 `
 
 export const Img = styled.img`
   width: 150px;
   height: auto;
   margin-right: 8px;
+  @media (max-width: ${breakpoints.m}px) {
+    display: none;
+  }
 `
 
 export const InfoDiv = styled.div`
@@ -42,7 +47,7 @@ export const ProductTitle = styled.p`
 `
 
 export const Size = styled.p`
-  margin-top: 8px;
+  margin: 8px 0;
   color: lightgrey;
   font-size: 0.8rem;
 `
