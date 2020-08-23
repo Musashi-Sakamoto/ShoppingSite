@@ -14,6 +14,7 @@ export const Wrapper = styled.div`
 `
 
 export const BarButton = styled.button`
+  background-color: white;
   position: absolute;
   top: 18px;
   right: 10px;
