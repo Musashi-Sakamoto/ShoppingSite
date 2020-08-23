@@ -32,6 +32,12 @@ const SideBar = ({ setIsSideBarOpen }) => {
     `
   )
 
+  const SidebarActionLink = props => (
+    <SideBarLink {...props} onClick={() => setIsSideBarOpen(false)}>
+      {props.children}
+    </SideBarLink>
+  )
+
   const options = allShopifyCollection.nodes.map(n => ({
     value: `/collections/${n.fields.slug}`,
     label: n.title,
@@ -44,7 +50,9 @@ const SideBar = ({ setIsSideBarOpen }) => {
       </BarButton>
       <SideBarList>
         <SideBarListItem>
-          <SideBarLink to="/collections/new-arrival">NEW ARRIVALS</SideBarLink>
+          <SidebarActionLink to="/collections/new-arrival">
+            NEW ARRIVALS
+          </SidebarActionLink>
         </SideBarListItem>
         <SideBarListItem>
           <Collapsible
@@ -59,44 +67,46 @@ const SideBar = ({ setIsSideBarOpen }) => {
             <SideBarList>
               {options.map((option, i) => (
                 <SideBarListItem key={i}>
-                  <SideBarLink to={option.value}>{option.label}</SideBarLink>
+                  <SidebarActionLink to={option.value}>
+                    {option.label}
+                  </SidebarActionLink>
                 </SideBarListItem>
               ))}
             </SideBarList>
           </Collapsible>
         </SideBarListItem>
         <SideBarListItem>
-          <SideBarLink to="/">NEWS</SideBarLink>
+          <SidebarActionLink to="/">NEWS</SidebarActionLink>
         </SideBarListItem>
         <SideBarListItem>
-          <SideBarLink to="/">TOUR</SideBarLink>
+          <SidebarActionLink to="/">TOUR</SidebarActionLink>
         </SideBarListItem>
         <SideBarListItem>
-          <SideBarLink to="/">VIDEOS</SideBarLink>
+          <SidebarActionLink to="/">VIDEOS</SidebarActionLink>
         </SideBarListItem>
         <SideBarListItem>
-          <SideBarLink to="/">ABOUT</SideBarLink>
+          <SidebarActionLink to="/">ABOUT</SidebarActionLink>
         </SideBarListItem>
         <HR style={{ marginTop: '30px' }} />
         <SideBarListItem>
-          <SideBarLink to="/cart">SHOPPING CART</SideBarLink>
+          <SidebarActionLink to="/cart">SHOPPING CART</SidebarActionLink>
         </SideBarListItem>
         <HR />
         <SideBarListItem>
-          <SideBarLink to="/">MY ACCOUNT</SideBarLink>
+          <SidebarActionLink to="/">MY ACCOUNT</SidebarActionLink>
         </SideBarListItem>
         <HR style={{ marginBottom: '30px' }} />
         <SideBarListItemForPolicies>
-          <SideBarLink to="/">CUSTOMER CARE</SideBarLink>
+          <SidebarActionLink to="/">CUSTOMER CARE</SidebarActionLink>
         </SideBarListItemForPolicies>
         <SideBarListItemForPolicies>
-          <SideBarLink to="/">CONNECT</SideBarLink>
+          <SidebarActionLink to="/">CONNECT</SidebarActionLink>
         </SideBarListItemForPolicies>
         <SideBarListItemForPolicies>
-          <SideBarLink to="/">CONTACT</SideBarLink>
+          <SidebarActionLink to="/">CONTACT</SidebarActionLink>
         </SideBarListItemForPolicies>
         <SideBarListItemForPolicies>
-          <SideBarLink to="/">FAQ</SideBarLink>
+          <SidebarActionLink to="/">FAQ</SidebarActionLink>
         </SideBarListItemForPolicies>
       </SideBarList>
     </Container>
