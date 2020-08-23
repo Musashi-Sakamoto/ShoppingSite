@@ -1,14 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import Client from 'shopify-buy'
+import { withStoreContext } from 'gatsby-plugin-shopify-buy'
 
 import Context from '~/context/StoreContext'
 
-const client = Client.buildClient({
-  storefrontAccessToken: process.env.SHOPIFY_ACCESS_TOKEN,
-  domain: `${process.env.SHOP_NAME}.myshopify.com`,
-})
-
-const ContextProvider = ({ children }) => {
+const ContextProvider = ({ children, storeContext: { client } }) => {
   let initialStoreState = {
     client,
     adding: false,
@@ -62,8 +57,13 @@ const ContextProvider = ({ children }) => {
 
     initializeCheckout()
   }, [store.client.checkout])
-  
-  useEffect(() => () => { isRemoved = true; }, [])
+
+  useEffect(
+    () => () => {
+      isRemoved = true
+    },
+    []
+  )
 
   return (
     <Context.Provider
@@ -122,4 +122,4 @@ const ContextProvider = ({ children }) => {
     </Context.Provider>
   )
 }
-export default ContextProvider
+export default withStoreContext(ContextProvider)

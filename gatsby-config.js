@@ -65,6 +65,17 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-shopify-buy`,
+      options: {
+        stores: {
+          first: {
+            domain: `${process.env.SHOP_NAME}.myshopify.com`,
+            accessToken: process.env.SHOPIFY_ACCESS_TOKEN,
+          },
+        },
+      },
+    },
+    {
       resolve: 'gatsby-plugin-root-import',
       options: {
         '~': path.join(__dirname, 'src/'),
