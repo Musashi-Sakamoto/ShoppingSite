@@ -11,7 +11,8 @@ const CollectionPage = ({ data }) => {
       <SEO title={collection.title} description={collection.description} />
       {collection.fields.slug !== 'new-arrival' && (
         <Img
-          objectPosition="10% 10%"
+          style={{ width: '100%', maxWidth: 'none', maxHeight: '500px' }}
+          imgStyle={{ objectPosition: '10% center' }}
           fluid={collection.image.localFile.childImageSharp.fluid}
           alt={collection.fields.slug}
         />
