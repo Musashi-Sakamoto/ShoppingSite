@@ -15,6 +15,7 @@ import {
   CheckSpan,
   EmptyText,
   EmptyButton,
+  ListWrapper,
 } from './styles'
 
 const Cart = () => {
@@ -43,7 +44,7 @@ const Cart = () => {
       <TitleInfo>
         {lineItems.length} item{lineItems.length > 1 && 's'} in your cart
       </TitleInfo>
-      {lineItems}
+      <ListWrapper>{lineItems}</ListWrapper>
       {lineItems.length > 0 ? (
         <>
           <SubTotal>Subtotal {getPrice(checkout.subtotalPrice)}</SubTotal>

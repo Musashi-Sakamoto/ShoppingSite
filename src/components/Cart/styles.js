@@ -10,6 +10,12 @@ export const Wrapper = styled.div`
   }
 `
 
+export const ListWrapper = styled.div`
+  & > div:last-child {
+    border-bottom: 1px solid lightgrey;
+  }
+`
+
 export const TitleInfo = styled.p`
   text-align: center;
   padding-bottom: 64px;
