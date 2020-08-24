@@ -34,3 +34,28 @@ export const PriceTag = styled.span`
   text-align: center;
   margin-top: 15px;
 `
+
+export const Pagination = styled.ul`
+  margin: 0;
+  list-style: none;
+  text-align: center;
+`
+
+export const PaginationList = styled.li`
+  display: inline-block;
+`
+
+export const PaginationButton = styled.button`
+  border: none;
+  width: 35px;
+  height: 35px;
+  outline: none;
+  cursor: pointer;
+  margin-right: 8px;
+  background-color: white;
+  border: ${props => (props.isCurrent ? 'none' : '2px solid black')};
+  &:hover {
+    color: ${props => (props.isCurrent ? 'black' : 'white')};
+    background-color: ${props => (props.isCurrent ? 'white' : 'black')};
+  }
+`
