@@ -3,7 +3,6 @@ import { breakpoints } from '~/utils/styles'
 
 export const Wrapper = styled.div`
   border-top: 1px solid lightgrey;
-  border-bottom: 1px solid lightgrey;
   display: flex;
   justify-content: space-between;
   align-items: center;
