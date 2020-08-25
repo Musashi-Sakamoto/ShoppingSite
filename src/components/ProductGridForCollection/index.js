@@ -5,6 +5,7 @@ import { useQueryParam, NumberParam } from 'use-query-params'
 import 'react-responsive-carousel/lib/styles/carousel.min.css' // requires a loader
 import { Carousel } from 'react-responsive-carousel'
 import StoreContext from '~/context/StoreContext'
+import HoverCarousel from '../HoverCarousel'
 import {
   Grid,
   Product,
@@ -47,15 +48,7 @@ const ProductGridForCollection = ({ collection }) => {
               <StyledLink to={`/product/${handle}/`} key={id}>
                 <Product>
                   {images.length > 0 && (
-                    <Carousel
-                      autoPlay
-                      infiniteLoop
-                      swipeable
-                      showThumbs={false}
-                      showIndicators={false}
-                      showStatus={false}
-                      showArrows={false}
-                    >
+                    <HoverCarousel hoverable={images.length > 1}>
                       {images.map(image => (
                         <Img
                           fluid={image.localFile.childImageSharp.fluid}
@@ -63,7 +56,7 @@ const ProductGridForCollection = ({ collection }) => {
                           alt={title}
                         />
                       ))}
-                    </Carousel>
+                    </HoverCarousel>
                   )}
                   <Title>{title}</Title>
                   <PriceTag>{getPrice(firstVariant.price)}</PriceTag>
