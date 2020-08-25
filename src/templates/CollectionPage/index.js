@@ -2,6 +2,7 @@ import React from 'react'
 import SEO from '~/components/seo'
 import ProductGridForCollection from '~/components/ProductGridForCollection'
 import { Container, Img } from '~/utils/styles'
+import { Banner } from './styles'
 
 const CollectionPage = ({ data }) => {
   const collection = data.shopifyCollection
@@ -9,12 +10,9 @@ const CollectionPage = ({ data }) => {
   return (
     <>
       <SEO title={collection.title} description={collection.description} />
-      {collection.fields.slug !== 'new-arrival' && (
-        <Img
-          style={{ width: '100%', maxWidth: 'none', maxHeight: '500px' }}
-          imgStyle={{ objectPosition: '10% center' }}
-          fluid={collection.image.localFile.childImageSharp.fluid}
-          alt={collection.fields.slug}
+      {collection.descriptionHtml && (
+        <Banner
+          dangerouslySetInnerHTML={{ __html: collection.descriptionHtml }}
         />
       )}
       <Container>
@@ -30,6 +28,7 @@ export const query = graphql`
       fields {
         slug
       }
+      descriptionHtml
       products {
         id
         title
