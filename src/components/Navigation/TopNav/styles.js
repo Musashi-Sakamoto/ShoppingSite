@@ -8,7 +8,9 @@ export const TopContainer = styled.div`
   padding: 20px 0;
 `
 
-export const TopMenuList = styled.ul``
+export const TopMenuList = styled.ul`
+  margin: 0;
+`
 
 export const TopMenuListItem = styled.li`
   list-style: none;

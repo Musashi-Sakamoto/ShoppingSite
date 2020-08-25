@@ -1,5 +1,7 @@
 import React, { useContext } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
+import 'react-responsive-carousel/lib/styles/carousel.min.css' // requires a loader
+import { Carousel } from 'react-responsive-carousel'
 
 import StoreContext from '~/context/StoreContext'
 import { Grid, Product, Title, PriceTag } from './styles'
@@ -59,17 +61,30 @@ const ProductGrid = () => {
               id,
               handle,
               title,
-              images: [firstImage],
+              images,
               variants: [firstVariant],
             },
           }) => (
             <StyledLink to={`/product/${handle}/`} key={id}>
               <Product>
-                {firstImage && firstImage.localFile && (
-                  <Img
-                    fluid={firstImage.localFile.childImageSharp.fluid}
-                    alt={handle}
-                  />
+                {images.length > 0 && (
+                  <Carousel
+                    autoPlay
+                    infiniteLoop
+                    swipeable
+                    showThumbs={false}
+                    showIndicators={false}
+                    showStatus={false}
+                    showArrows={false}
+                  >
+                    {images.map(image => (
+                      <Img
+                        fluid={image.localFile.childImageSharp.fluid}
+                        key={image.id}
+                        alt={title}
+                      />
+                    ))}
+                  </Carousel>
                 )}
                 <Title>{title}</Title>
                 <PriceTag>{getPrice(firstVariant.price)}</PriceTag>
