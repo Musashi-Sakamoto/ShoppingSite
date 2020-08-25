@@ -15,24 +15,22 @@ const Footer = () => {
       <FooterContainer>
         <FooterUl>
           <FooterLi>
-            <FooterLink href="https://google.co.jp">CUSTOMER CARE</FooterLink>
+            <FooterLink to="/policy">CUSTOMER CARE</FooterLink>
           </FooterLi>
           <FooterLi>
-            <FooterLink href="https://google.co.jp">CONNECT</FooterLink>
+            <FooterLink to="/policy">CONNECT</FooterLink>
           </FooterLi>
           <FooterLi>
-            <FooterLink href="https://google.co.jp">CONTACT</FooterLink>
+            <FooterLink to="/policy">CONTACT</FooterLink>
           </FooterLi>
           <FooterLi>
-            <FooterLink href="https://google.co.jp">FAQ</FooterLink>
+            <FooterLink to="/policy">FAQ</FooterLink>
           </FooterLi>
         </FooterUl>
         <FooterHr />
         <FooterText>
           COPYRIGHT &copy;{' '}
-          <FooterLinkCompany href="https://google.co.jp">
-            2020 TOP DAWG ENT.
-          </FooterLinkCompany>
+          <FooterLinkCompany to="/policy">2020 Alt.Fashion.</FooterLinkCompany>
         </FooterText>
       </FooterContainer>
       <SNS />

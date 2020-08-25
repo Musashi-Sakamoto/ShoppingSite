@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import { Link } from 'gatsby'
 
 import { breakpoints } from '~/utils/styles'
 
@@ -23,7 +24,7 @@ export const FooterLi = styled.li`
     min-width: 70px;
   }
 `
-export const FooterLink = styled.a`
+export const FooterLink = styled(Link)`
   font-size: 0.6rem;
   color: white;
   text-decoration: none;
