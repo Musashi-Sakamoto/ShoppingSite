@@ -2,7 +2,8 @@ import React, { useContext, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import _ from 'lodash'
 import { useQueryParam, NumberParam } from 'use-query-params'
-
+import 'react-responsive-carousel/lib/styles/carousel.min.css' // requires a loader
+import { Carousel } from 'react-responsive-carousel'
 import StoreContext from '~/context/StoreContext'
 import {
   Grid,
@@ -42,20 +43,27 @@ const ProductGridForCollection = ({ collection }) => {
       <Grid>
         {pageChunk[page - 1] ? (
           pageChunk[page - 1].map(
-            ({
-              id,
-              handle,
-              title,
-              images: [firstImage],
-              variants: [firstVariant],
-            }) => (
+            ({ id, handle, title, images, variants: [firstVariant] }) => (
               <StyledLink to={`/product/${handle}/`} key={id}>
                 <Product>
-                  {firstImage && firstImage.localFile && (
-                    <Img
-                      fluid={firstImage.localFile.childImageSharp.fluid}
-                      alt={handle}
-                    />
+                  {images.length > 0 && (
+                    <Carousel
+                      autoPlay
+                      infiniteLoop
+                      swipeable
+                      showThumbs={false}
+                      showIndicators={false}
+                      showStatus={false}
+                      showArrows={false}
+                    >
+                      {images.map(image => (
+                        <Img
+                          fluid={image.localFile.childImageSharp.fluid}
+                          key={image.id}
+                          alt={title}
+                        />
+                      ))}
+                    </Carousel>
                   )}
                   <Title>{title}</Title>
                   <PriceTag>{getPrice(firstVariant.price)}</PriceTag>

@@ -47,7 +47,7 @@ const Navigation = ({ setIsSideBarOpen }) => {
 
       <TitleDiv>
         <MenuLink to="/">
-          <LogoImg src="/tde_no_bars.webp" alt="logo" />
+          <LogoImg src="/alt_logo.png" alt="logo" />
         </MenuLink>
         {isSmall && (
           <BarButton onClick={() => setIsSideBarOpen(true)}>
