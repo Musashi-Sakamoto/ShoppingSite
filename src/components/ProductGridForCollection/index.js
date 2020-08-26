@@ -3,19 +3,9 @@ import PropTypes from 'prop-types'
 import _ from 'lodash'
 import { useQueryParam, NumberParam } from 'use-query-params'
 import 'react-responsive-carousel/lib/styles/carousel.min.css' // requires a loader
-import { Carousel } from 'react-responsive-carousel'
 import StoreContext from '~/context/StoreContext'
-import HoverCarousel from '../HoverCarousel'
-import {
-  Grid,
-  Product,
-  Title,
-  PriceTag,
-  Pagination,
-  PaginationList,
-  PaginationButton,
-} from './styles'
-import { Img, StyledLink } from '~/utils/styles'
+import ProductCell from '../ProductCell'
+import { Grid, Pagination, PaginationList, PaginationButton } from './styles'
 
 const ProductGridForCollection = ({ collection }) => {
   const {
@@ -43,27 +33,18 @@ const ProductGridForCollection = ({ collection }) => {
     <>
       <Grid>
         {pageChunk[page - 1] ? (
-          pageChunk[page - 1].map(
-            ({ id, handle, title, images, variants: [firstVariant] }) => (
-              <StyledLink to={`/product/${handle}/`} key={id}>
-                <Product>
-                  {images.length > 0 && (
-                    <HoverCarousel hoverable={images.length > 1}>
-                      {images.map(image => (
-                        <Img
-                          fluid={image.localFile.childImageSharp.fluid}
-                          key={image.id}
-                          alt={title}
-                        />
-                      ))}
-                    </HoverCarousel>
-                  )}
-                  <Title>{title}</Title>
-                  <PriceTag>{getPrice(firstVariant.price)}</PriceTag>
-                </Product>
-              </StyledLink>
-            )
-          )
+          pageChunk[page - 1].map(({ id, handle, title, images, variants }) => (
+            <ProductCell
+              key={id}
+              availableForSale={
+                variants.filter(v => v.availableForSale === true).length >= 1
+              }
+              handle={handle}
+              images={images}
+              price={getPrice(variants[0].price)}
+              title={title}
+            />
+          ))
         ) : (
           <p>No Products found!</p>
         )}

@@ -1,11 +1,10 @@
 import React, { useContext } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import 'react-responsive-carousel/lib/styles/carousel.min.css' // requires a loader
-import HoverCarousel from '../HoverCarousel'
+import ProductCell from '../ProductCell'
 
 import StoreContext from '~/context/StoreContext'
-import { Grid, Product, Title, PriceTag } from './styles'
-import { Img, StyledLink } from '~/utils/styles'
+import { Grid } from './styles'
 
 const ProductGrid = () => {
   const {
@@ -37,6 +36,7 @@ const ProductGrid = () => {
               }
               variants {
                 price
+                availableForSale
               }
             }
           }
@@ -56,33 +56,20 @@ const ProductGrid = () => {
     <Grid>
       {allShopifyProduct.edges ? (
         allShopifyProduct.edges.map(
-          ({
-            node: {
-              id,
-              handle,
-              title,
-              images,
-              variants: [firstVariant],
-            },
-          }) => (
-            <StyledLink to={`/product/${handle}/`} key={id}>
-              <Product>
-                {images.length > 0 && (
-                  <HoverCarousel hoverable={images.length > 1}>
-                    {images.map(image => (
-                      <Img
-                        fluid={image.localFile.childImageSharp.fluid}
-                        key={image.id}
-                        alt={title}
-                      />
-                    ))}
-                  </HoverCarousel>
-                )}
-                <Title>{title}</Title>
-                <PriceTag>{getPrice(firstVariant.price)}</PriceTag>
-              </Product>
-            </StyledLink>
-          )
+          ({ node: { id, handle, title, images, variants } }) => {
+            return (
+              <ProductCell
+                availableForSale={
+                  variants.filter(v => v.availableForSale === true).length >= 1
+                }
+                key={id}
+                title={title}
+                handle={handle}
+                images={images}
+                price={getPrice(variants[0].price)}
+              />
+            )
+          }
         )
       ) : (
         <p>No Products found!</p>

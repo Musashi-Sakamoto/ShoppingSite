@@ -8,7 +8,7 @@ import {
   Wrapper,
   TitleInfo,
   SubTotal,
-  Taxes,
+  Message,
   Total,
   CheckoutButton,
   CheckSection,
@@ -48,8 +48,7 @@ const Cart = () => {
       {lineItems.length > 0 ? (
         <>
           <SubTotal>Subtotal {getPrice(checkout.subtotalPrice)}</SubTotal>
-          <Taxes>Taxes {getPrice(checkout.totalTax)}</Taxes>
-          <Total>Total {getPrice(checkout.totalPrice)}</Total>
+          <Message>Taxes and shipping calculated at checkout</Message>
           <CheckSection>
             <input
               type="checkbox"
