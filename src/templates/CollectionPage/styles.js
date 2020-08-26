@@ -12,7 +12,5 @@ export const Banner = styled.div`
   & > iframe {
     z-index: -9999;
     pointer-events: none;
-    position: relative;
-    top: -60px;
   }
 `
