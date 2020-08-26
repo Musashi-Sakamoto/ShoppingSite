@@ -9,7 +9,6 @@ import {
   TitleInfo,
   SubTotal,
   Message,
-  Total,
   CheckoutButton,
   CheckSection,
   CheckSpan,

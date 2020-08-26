@@ -1,8 +1,8 @@
-import React, { useRef } from 'react'
+import React from 'react'
 
 import { TopContainer, MenuLink, TopMenuList, TopMenuListItem } from './styles'
 
-const TopNav = ({ siteTitle }) => {
+const TopNav = () => {
   return (
     <TopContainer>
       <TopMenuList>
