@@ -1,7 +1,7 @@
 import React from 'react'
 import SEO from '~/components/seo'
 import ProductGridForCollection from '~/components/ProductGridForCollection'
-import { Container, Img } from '~/utils/styles'
+import { Container } from '~/utils/styles'
 import { Banner } from './styles'
 
 const CollectionPage = ({ data }) => {
