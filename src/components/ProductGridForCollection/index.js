@@ -69,17 +69,18 @@ const ProductGridForCollection = ({ collection }) => {
         )}
       </Grid>
       <Pagination>
-        {pageChunk.map((_, i) => (
-          <PaginationList key={i}>
-            <PaginationButton
-              isCurrent={page === i + 1}
-              key={i}
-              onClick={() => setPage(i + 1)}
-            >
-              {i + 1}
-            </PaginationButton>
-          </PaginationList>
-        ))}
+        {pageChunk.length > 1 &&
+          pageChunk.map((_, i) => (
+            <PaginationList key={i}>
+              <PaginationButton
+                isCurrent={page === i + 1}
+                key={i}
+                onClick={() => setPage(i + 1)}
+              >
+                {i + 1}
+              </PaginationButton>
+            </PaginationList>
+          ))}
       </Pagination>
     </>
   )
