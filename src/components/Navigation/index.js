@@ -39,7 +39,7 @@ const Navigation = ({ setIsSideBarOpen }) => {
           <CartUl>
             <MenuLink to="/cart">
               {hasItems && <CartCounter>{quantity}</CartCounter>}
-              <FontAwesomeIcon icon={faShoppingCart} />
+              <FontAwesomeIcon icon={faShoppingCart} size="lg" />
             </MenuLink>
           </CartUl>
         </>
