@@ -24,6 +24,9 @@ export const InfoDiv = styled.div`
   flex-direction: column;
   justify-content: center;
   flex-grow: 1;
+  @media (max-width: ${breakpoints.m}px) {
+    max-width: 60%;
+  }
 `
 
 export const QuantityInput = styled.input`
@@ -43,6 +46,11 @@ export const QuantityInput = styled.input`
 export const ProductTitle = styled.p`
   text-transform: uppercase;
   font-size: 0.8rem;
+  @media (max-width: ${breakpoints.m}px) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 `
 
 export const Size = styled.p`
