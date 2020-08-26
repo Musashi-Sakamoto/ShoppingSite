@@ -12,7 +12,7 @@ const BottomNav = () => {
   const { allShopifyCollection } = useStaticQuery(
     graphql`
       query {
-        allShopifyCollection(filter: { handle: { ne: "new-arrival" } }) {
+        allShopifyCollection(filter: { handle: { ne: "frontpage" } }) {
           nodes {
             title
             handle
