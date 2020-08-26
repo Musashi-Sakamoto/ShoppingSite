@@ -8,7 +8,10 @@ const PolicyPage = ({ data }) => {
   const policies = data.allShopifyShopPolicy.nodes
   return (
     <>
-      <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+      <SEO
+        title="Home"
+        keywords={[`alt.fashion`, `policy`, `terms of service`]}
+      />
       <Container>
         <Policy policies={policies} />
       </Container>
