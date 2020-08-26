@@ -8,7 +8,7 @@ import VideoNav from '~/components/VideoNav'
 
 const IndexPage = () => (
   <>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO title="Home" keywords={[`alt.fashion`, `new arrival`, `home`]} />
     <VideoNav />
     <Container>
       <Header>NEW ARRIVALS</Header>
