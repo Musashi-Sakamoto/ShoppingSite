@@ -31,14 +31,7 @@ export const SubTotal = styled.p`
   padding-top: 64px;
 `
 
-export const Taxes = styled.p`
-  text-align: right;
-  font-size: 0.8rem;
-  padding-top: 24px;
-  font-weight: 300;
-`
-
-export const Total = styled.p`
+export const Message = styled.p`
   text-align: right;
   font-size: 0.8rem;
   padding-top: 24px;
