@@ -11,8 +11,8 @@ export const ProductTitle = styled.p`
 
 export const ProductDescription = styled.p`
   font-weight: 600;
-  font-size: 0.8rem;
-  line-height: 1;
+  font-size: 0.7rem;
+  line-height: 1.2;
 `
 
 export const TwoColumnGrid = styled.div`
