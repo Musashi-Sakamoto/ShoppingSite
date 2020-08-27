@@ -110,7 +110,6 @@ const ProductForm = ({ product }) => {
 
   return (
     <>
-      <ExtraInfo>ALL SALES ARE FINAL</ExtraInfo>
       <PriceTag>{price}</PriceTag>
       <Label htmlFor="quantity">QUANTITY</Label>
       <Quantity>

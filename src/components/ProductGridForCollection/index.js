@@ -5,7 +5,13 @@ import { useQueryParam, NumberParam } from 'use-query-params'
 import 'react-responsive-carousel/lib/styles/carousel.min.css' // requires a loader
 import StoreContext from '~/context/StoreContext'
 import ProductCell from '../ProductCell'
-import { Grid, Pagination, PaginationList, PaginationButton } from './styles'
+import {
+  Grid,
+  Pagination,
+  PaginationList,
+  PaginationButton,
+  EmptyText,
+} from './styles'
 
 const ProductGridForCollection = ({ collection }) => {
   const {
@@ -31,24 +37,26 @@ const ProductGridForCollection = ({ collection }) => {
 
   return (
     <>
-      <Grid>
-        {pageChunk[page - 1] ? (
-          pageChunk[page - 1].map(({ id, handle, title, images, variants }) => (
-            <ProductCell
-              key={id}
-              availableForSale={
-                variants.filter(v => v.availableForSale === true).length >= 1
-              }
-              handle={handle}
-              images={images}
-              price={getPrice(variants[0].price)}
-              title={title}
-            />
-          ))
-        ) : (
-          <p>No Products found!</p>
-        )}
-      </Grid>
+      {pageChunk[page - 1] ? (
+        <Grid>
+          {pageChunk[page - 1].map(
+            ({ id, handle, title, images, variants }) => (
+              <ProductCell
+                key={id}
+                availableForSale={
+                  variants.filter(v => v.availableForSale === true).length >= 1
+                }
+                handle={handle}
+                images={images}
+                price={getPrice(variants[0].price)}
+                title={title}
+              />
+            )
+          )}
+        </Grid>
+      ) : (
+        <EmptyText>Coming Soon</EmptyText>
+      )}
       <Pagination>
         {pageChunk.length > 1 &&
           pageChunk.map((_, i) => (
