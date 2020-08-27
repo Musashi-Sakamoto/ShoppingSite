@@ -27,7 +27,9 @@ const BottomNav = () => {
       <BottomMenuList>
         {allShopifyCollection.nodes.map((node, i) => (
           <BottomMenuListItem key={i}>
-            <MenuLink to={`/collections/${node.handle}`}>{node.title}</MenuLink>
+            <MenuLink to={`/collections/${node.handle}/?page=1`}>
+              {node.title}
+            </MenuLink>
           </BottomMenuListItem>
         ))}
       </BottomMenuList>

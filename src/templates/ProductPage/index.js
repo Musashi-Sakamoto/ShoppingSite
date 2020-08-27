@@ -94,6 +94,7 @@ const ProductPage = ({ data }) => {
               infiniteLoop
               swipeable
               showStatus={false}
+              showIndicators={product.images.length > 1}
             >
               {product.images.map(image => (
                 <Img
