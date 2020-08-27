@@ -30,6 +30,7 @@ export const query = graphql`
       fields {
         slug
       }
+      title
       descriptionHtml
       products {
         id
@@ -48,6 +49,7 @@ export const query = graphql`
               }
             }
           }
+          id
         }
       }
       image {

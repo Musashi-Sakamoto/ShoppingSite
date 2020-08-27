@@ -9,6 +9,34 @@ export const BottomContainer = styled.div`
   background-color: #f2f2f2;
 `
 
+export const SlickContainer = styled.div`
+  max-width: 780px;
+  margin: auto;
+`
+
+export const EachSlide = styled.div`
+  padding: 0 16px;
+  outline: none;
+`
+
+export const BeforeArrow = styled.div`
+  &.slick-prev:before {
+    content: '<';
+    color: black;
+    position: absolute;
+    top: -2px;
+  }
+`
+
+export const NextArrow = styled.div`
+  &.slick-next:before {
+    content: '>';
+    color: black;
+    position: absolute;
+    top: -2px;
+  }
+`
+
 export const BottomMenuList = styled.ul`
   margin: 0;
 `
