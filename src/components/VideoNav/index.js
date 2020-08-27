@@ -45,7 +45,7 @@ const VideoNav = () => {
     <Container>
       <FlexContainer>
         <Item>
-          <Link to={`/collections/${edges[0].node.fields.slug}/`}>
+          <Link to={`/collections/${edges[0].node.fields.slug}/?page=1`}>
             <Image
               fluid={edges[0].node.image.localFile.childImageSharp.fluid}
               alt={edges[0].node.title}
@@ -54,7 +54,7 @@ const VideoNav = () => {
           </Link>
         </Item>
         <Item>
-          <Link to={`/collections/${edges[1].node.fields.slug}/`}>
+          <Link to={`/collections/${edges[1].node.fields.slug}/?page=1`}>
             <Image
               fluid={edges[1].node.image.localFile.childImageSharp.fluid}
               alt={edges[1].node.title}
@@ -65,7 +65,7 @@ const VideoNav = () => {
       </FlexContainer>
       <FlexContainer>
         <Item>
-          <Link to={`/collections/${edges[2].node.fields.slug}/`}>
+          <Link to={`/collections/${edges[2].node.fields.slug}/?page=1`}>
             <Image
               fluid={edges[2].node.image.localFile.childImageSharp.fluid}
               alt={edges[2].node.title}
@@ -74,7 +74,7 @@ const VideoNav = () => {
           </Link>
         </Item>
         <Item>
-          <Link to={`/collections/${edges[3].node.fields.slug}/`}>
+          <Link to={`/collections/${edges[3].node.fields.slug}/?page=1`}>
             <Image
               fluid={edges[3].node.image.localFile.childImageSharp.fluid}
               alt={edges[3].node.title}
@@ -83,7 +83,7 @@ const VideoNav = () => {
           </Link>
         </Item>
         <Item>
-          <Link to={`/collections/${edges[4].node.fields.slug}/`}>
+          <Link to={`/collections/${edges[4].node.fields.slug}/?page=1`}>
             <Image
               fluid={edges[4].node.image.localFile.childImageSharp.fluid}
               alt={edges[4].node.title}

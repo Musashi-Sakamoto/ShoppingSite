@@ -34,7 +34,6 @@ export const GlobalStyle = props => (
 
 export const Header = styled.p`
   font-size: 0.75rem;
-  margin-bottom: 100px;
   @media (max-width: ${breakpoints.m}px) {
     font-size: 0.8rem;
     margin: 50px;

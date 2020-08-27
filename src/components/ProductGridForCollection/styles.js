@@ -39,3 +39,7 @@ export const PaginationButton = styled.button`
     background-color: ${props => (props.isCurrent ? 'white' : 'black')};
   }
 `
+export const EmptyText = styled.p`
+  text-align: center;
+  padding: 48px;
+`

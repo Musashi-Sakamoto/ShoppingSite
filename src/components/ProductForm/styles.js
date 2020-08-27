@@ -66,6 +66,7 @@ export const VariantSection = styled.div`
 
 export const VariantSelect = styled.select`
   padding-left: 15px;
+  padding-right: 30px;
   border: 2px solid black;
   height: 50px;
   min-width: 128px;
