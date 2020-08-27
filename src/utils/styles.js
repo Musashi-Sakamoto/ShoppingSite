@@ -35,8 +35,8 @@ export const GlobalStyle = props => (
 export const Header = styled.p`
   font-size: 0.75rem;
   @media (max-width: ${breakpoints.m}px) {
+    margin-top: 80px;
     font-size: 0.8rem;
-    margin: 50px;
     text-align: center;
   }
 `
