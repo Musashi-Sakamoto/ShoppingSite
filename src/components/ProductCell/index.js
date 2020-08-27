@@ -6,7 +6,6 @@ import { Product, Title, PriceTag, SoldOut } from './styles'
 import { Img, StyledLink } from '~/utils/styles'
 
 const ProductCell = ({ images, handle, title, price, availableForSale }) => {
-  console.log(`${title}: ${availableForSale}`)
   return (
     <StyledLink to={`/product/${handle}/`}>
       <Product>

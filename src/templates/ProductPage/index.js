@@ -91,6 +91,7 @@ const ProductPage = ({ data }) => {
                   />
                 )
               }}
+              showThumbs={false}
               infiniteLoop
               swipeable
               showStatus={false}

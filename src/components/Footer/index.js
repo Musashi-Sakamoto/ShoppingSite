@@ -15,16 +15,15 @@ const Footer = () => {
       <FooterContainer>
         <FooterUl>
           <FooterLi>
-            <FooterLink to="/policy">CUSTOMER CARE</FooterLink>
+            <FooterLink to="/privacy">Privacy Policy</FooterLink>
           </FooterLi>
           <FooterLi>
-            <FooterLink to="/policy">CONNECT</FooterLink>
+            <FooterLink to="/terms-conditions">
+              Terms &amp; Conditions
+            </FooterLink>
           </FooterLi>
           <FooterLi>
-            <FooterLink to="/policy">CONTACT</FooterLink>
-          </FooterLi>
-          <FooterLi>
-            <FooterLink to="/policy">FAQ</FooterLink>
+            <FooterLink to="/refund">Refund Policy</FooterLink>
           </FooterLi>
         </FooterUl>
         <FooterHr />

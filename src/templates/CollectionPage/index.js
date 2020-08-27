@@ -1,4 +1,6 @@
 import React from 'react'
+import { graphql } from 'gatsby'
+
 import SEO from '~/components/seo'
 import ProductGridForCollection from '~/components/ProductGridForCollection'
 import { Container } from '~/utils/styles'

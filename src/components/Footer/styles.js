@@ -16,6 +16,7 @@ export const FooterUl = styled.ul`
 `
 
 export const FooterLi = styled.li`
+  margin-right: 16px;
   list-style: none;
   display: inline-block;
   min-width: 100px;

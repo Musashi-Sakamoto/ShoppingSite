@@ -70,7 +70,7 @@ module.exports = {
         stores: {
           first: {
             domain: `${process.env.SHOP_NAME}.myshopify.com`,
-            accessToken: process.env.SHOPIFY_ACCESS_TOKEN,
+            storefrontAccessToken: process.env.SHOPIFY_ACCESS_TOKEN,
           },
         },
       },
