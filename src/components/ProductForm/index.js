@@ -7,7 +7,6 @@ import StoreContext from '~/context/StoreContext'
 
 import {
   PriceTag,
-  ExtraInfo,
   Label,
   QuantityInput,
   QuantityMinusButton,

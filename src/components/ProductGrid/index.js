@@ -54,8 +54,6 @@ const ProductGrid = () => {
 
   const pageChunk = _.chunk([...products], 24)
 
-  console.log('pageChunk: ', pageChunk)
-
   useEffect(() => {
     if (!page) {
       setPage(1)

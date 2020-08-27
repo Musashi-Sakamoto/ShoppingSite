@@ -2,9 +2,11 @@ import styled from '@emotion/styled'
 import { breakpoints } from '~/utils/styles'
 
 export const PolicyDiv = styled.div`
-  padding: 120px 0 150px;
+  padding-top: 60px;
+  max-width: 680px;
+  margin: auto;
   @media (max-width: ${breakpoints.m}px) {
-    padding-top: 20px;
+    padding: 20px 16px;
   }
 `
 

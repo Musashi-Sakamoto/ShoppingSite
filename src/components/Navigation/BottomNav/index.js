@@ -21,7 +21,6 @@ const BottomNav = () => {
       }
     `
   )
-  console.log(allShopifyCollection)
   return (
     <BottomContainer>
       <BottomMenuList>
