@@ -17,7 +17,7 @@ const VideoNav = () => {
   const { allShopifyCollection } = useStaticQuery(
     graphql`
       query {
-        allShopifyCollection(limit: 5) {
+        allShopifyCollection(filter: { image: { id: { regex: "/^.+/" } } }) {
           edges {
             node {
               image {

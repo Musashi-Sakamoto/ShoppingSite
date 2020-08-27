@@ -83,6 +83,10 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 
 Checkout my other open-source project [JAMStackBox](https://github.com/AlexanderProd/jam-stack-box) to continuously deploy your Gatsby site on your own server.
 
+* dev
+[![Netlify Status](https://api.netlify.com/api/v1/badges/37c31a73-254e-4ce6-80d2-e263039e8e81/deploy-status)](https://app.netlify.com/sites/alt-fashion-frontend-dev/deploys)
+* prod
+[![Netlify Status](https://api.netlify.com/api/v1/badges/658fb141-29a9-447a-9066-0f9358f9c377/deploy-status)](https://app.netlify.com/sites/alt-fashion-frontend-prod/deploys)
 ## 📌 ToDo
 
 I'll happily merge any pull request to improve the starter. 🙂

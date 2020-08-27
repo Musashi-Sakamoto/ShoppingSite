@@ -50,7 +50,7 @@ const SideBar = ({ setIsSideBarOpen }) => {
       </BarButton>
       <SideBarList>
         <SideBarListItem>
-          <SidebarActionLink to="/collections/new-arrival">
+          <SidebarActionLink to="/collections/frontpage">
             NEW ARRIVALS
           </SidebarActionLink>
         </SideBarListItem>
