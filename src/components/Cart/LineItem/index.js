@@ -28,7 +28,7 @@ const LineItem = props => {
   ) : null
 
   const selectedOptions = item.variant.selectedOptions
-    ? item.variant.selectedOptions.map(option => option.value)
+    ? item.variant.selectedOptions.map(option => option.value).join(', ')
     : null
 
   const handleRemove = () => {
