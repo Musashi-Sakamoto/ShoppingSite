@@ -70,6 +70,7 @@ export const Item = styled.div`
 `
 
 export const VideoDiv = styled.div`
+  background-color: black;
   position: absolute;
   top: -60px;
   left: 0;
