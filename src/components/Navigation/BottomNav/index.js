@@ -42,7 +42,9 @@ const BottomNav = () => {
         allShopifyCollection(filter: { handle: { ne: "frontpage" } }) {
           nodes {
             title
-            handle
+            fields {
+              slug
+            }
           }
         }
       }
@@ -67,7 +69,7 @@ const BottomNav = () => {
         <Slider {...settings}>
           {allShopifyCollection.nodes.map((node, i) => (
             <EachSlide key={i}>
-              <MenuLink to={`/collections/${node.handle}/?page=1`}>
+              <MenuLink to={`/collections/${node.fields.slug}/?page=1`}>
                 {node.title}
               </MenuLink>
             </EachSlide>

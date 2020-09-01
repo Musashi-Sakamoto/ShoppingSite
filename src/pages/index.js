@@ -39,6 +39,7 @@ export const query = graphql`
           availableForSale
         }
         images {
+          id
           localFile {
             childImageSharp {
               fluid(maxWidth: 910) {
