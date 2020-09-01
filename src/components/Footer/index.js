@@ -29,7 +29,7 @@ const Footer = () => {
         <FooterHr />
         <FooterText>
           COPYRIGHT &copy;{' '}
-          <FooterLinkCompany to="/policy">2020 Alt.Fashion.</FooterLinkCompany>
+          <FooterLinkCompany to="/">2020 Alt.Fashion.</FooterLinkCompany>
         </FooterText>
       </FooterContainer>
       <SNS />

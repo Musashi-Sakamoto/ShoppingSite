@@ -15,7 +15,7 @@ export const TopMenuList = styled.ul`
 export const TopMenuListItem = styled.li`
   list-style: none;
   display: inline-block;
-  padding: 0 10px;
+  padding: 0 20px;
 `
 
 export const MenuLink = styled(Link)`
