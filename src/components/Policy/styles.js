@@ -18,6 +18,12 @@ export const Title = styled.p`
   font-size: 0.8rem;
 `
 
-export const Body = styled.p`
-  font-size: 0.75rem;
+export const Body = styled.div`
+  & > h2,
+  h3 {
+    margin: 16px 0;
+  }
+  & > p {
+    font-size: 0.75rem;
+  }
 `
