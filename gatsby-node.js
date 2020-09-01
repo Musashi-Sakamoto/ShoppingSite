@@ -3,11 +3,20 @@ const path = require(`path`)
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
   if (node.internal.type === `ShopifyCollection`) {
-    const collectionSlug = node.handle
+    const collectionSlug = node.handle.startsWith('upcoming')
+      ? node.handle.split('-')[1]
+      : node.handle
+    const isUpcoming = node.handle.startsWith('upcoming')
+    console.log('createNodeField: ', collectionSlug, isUpcoming)
     createNodeField({
       node,
       name: `slug`,
       value: collectionSlug,
+    })
+    createNodeField({
+      node,
+      name: `isUpcoming`,
+      value: isUpcoming,
     })
   }
 }

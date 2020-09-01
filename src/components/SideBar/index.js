@@ -20,7 +20,7 @@ const SideBar = ({ setIsSideBarOpen }) => {
   const { allShopifyCollection } = useStaticQuery(
     graphql`
       query {
-        allShopifyCollection {
+        allShopifyCollection(filter: { handle: { ne: "frontpage" } }) {
           nodes {
             title
             fields {
@@ -76,37 +76,33 @@ const SideBar = ({ setIsSideBarOpen }) => {
           </Collapsible>
         </SideBarListItem>
         <SideBarListItem>
-          <SidebarActionLink to="/">NEWS</SidebarActionLink>
+          <SidebarActionLink to="/available-now">
+            Available Now
+          </SidebarActionLink>
         </SideBarListItem>
         <SideBarListItem>
-          <SidebarActionLink to="/">TOUR</SidebarActionLink>
+          <SidebarActionLink to="/upcoming-release">
+            Upcoming Release
+          </SidebarActionLink>
         </SideBarListItem>
         <SideBarListItem>
-          <SidebarActionLink to="/">VIDEOS</SidebarActionLink>
+          <SidebarActionLink to="/">Work With Us</SidebarActionLink>
         </SideBarListItem>
-        <SideBarListItem>
-          <SidebarActionLink to="/">ABOUT</SidebarActionLink>
-        </SideBarListItem>
-        <HR style={{ marginTop: '30px' }} />
+        <HR style={{ marginTop: '20px' }} />
         <SideBarListItem>
           <SidebarActionLink to="/cart">SHOPPING CART</SidebarActionLink>
         </SideBarListItem>
-        <HR />
-        <SideBarListItem>
-          <SidebarActionLink to="/">MY ACCOUNT</SidebarActionLink>
-        </SideBarListItem>
-        <HR style={{ marginBottom: '30px' }} />
+        <HR style={{ marginBottom: '20px' }} />
         <SideBarListItemForPolicies>
-          <SidebarActionLink to="/">CUSTOMER CARE</SidebarActionLink>
+          <SidebarActionLink to="/privacy">Privacy Policy</SidebarActionLink>
         </SideBarListItemForPolicies>
         <SideBarListItemForPolicies>
-          <SidebarActionLink to="/">CONNECT</SidebarActionLink>
+          <SidebarActionLink to="/terms-conditions">
+            Terms & Conditions
+          </SidebarActionLink>
         </SideBarListItemForPolicies>
         <SideBarListItemForPolicies>
-          <SidebarActionLink to="/">CONTACT</SidebarActionLink>
-        </SideBarListItemForPolicies>
-        <SideBarListItemForPolicies>
-          <SidebarActionLink to="/">FAQ</SidebarActionLink>
+          <SidebarActionLink to="/refund">Refund Policy</SidebarActionLink>
         </SideBarListItemForPolicies>
       </SideBarList>
     </Container>
