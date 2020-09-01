@@ -25,7 +25,12 @@ const UpcomingPage = ({ data }) => {
 
 export const query = graphql`
   query {
-    allShopifyCollection(filter: { fields: { isUpcoming: { eq: true } } }) {
+    allShopifyCollection(
+      filter: {
+        handle: { ne: "frontpage" }
+        fields: { isUpcoming: { eq: true } }
+      }
+    ) {
       edges {
         node {
           fields {

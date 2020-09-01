@@ -22,7 +22,12 @@ const AvailablePage = ({ data }) => {
 
 export const query = graphql`
   query {
-    allShopifyCollection(filter: { fields: { isUpcoming: { eq: false } } }) {
+    allShopifyCollection(
+      filter: {
+        handle: { ne: "frontpage" }
+        fields: { isUpcoming: { eq: false } }
+      }
+    ) {
       edges {
         node {
           fields {
