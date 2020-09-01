@@ -1,8 +1,8 @@
 import React, { useContext, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
-import { Grid, Title, PageTitle } from './styles'
-import { Img, StyledLink } from '~/utils/styles'
+import { Grid, Title, PageTitle, Link } from './styles'
+import { Img } from '~/utils/styles'
 
 const CollectionGrid = ({ collections, pageTitle }) => {
   return (
@@ -10,14 +10,14 @@ const CollectionGrid = ({ collections, pageTitle }) => {
       <PageTitle>{pageTitle}</PageTitle>
       {collections.map(({ node: { id, fields, image, title } }) => {
         return (
-          <StyledLink to={`/collections/${fields.slug}/?page=1`}>
+          <Link to={`/collections/${fields.slug}/?page=1`}>
             <Img
               fluid={image && image.localFile.childImageSharp.fluid}
               key={id}
               alt={title}
             />
             <Title>{title}</Title>
-          </StyledLink>
+          </Link>
         )
       })}
     </Grid>

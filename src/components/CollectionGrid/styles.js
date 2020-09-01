@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import { Img, StyledLink } from '~/utils/styles'
 
 import { breakpoints } from '../../utils/styles'
 
@@ -16,6 +17,13 @@ export const Grid = styled.div`
     padding: 20px 0;
     grid-template-columns: repeat(1, 1fr);
   }
+`
+
+export const Link = styled(StyledLink)`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 `
 
 export const PageTitle = styled.h3`
