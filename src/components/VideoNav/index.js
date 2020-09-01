@@ -98,7 +98,7 @@ const VideoNav = () => {
             title="front page"
             width="100%"
             height="100%"
-            src="https://player.vimeo.com/video/453346847?autoplay=1&loop=1&title=0&byline=0&portrait=0&muted=1"
+            src="https://player.vimeo.com/video/453514375?autoplay=1&loop=1&title=0&byline=0&portrait=0"
             frameborder="0"
             allow="autoplay; fullscreen"
             allowfullscreen

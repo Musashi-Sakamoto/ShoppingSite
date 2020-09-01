@@ -9,7 +9,7 @@ const ProductCell = ({ images, handle, title, price, availableForSale }) => {
   return (
     <StyledLink to={`/product/${handle}/`}>
       <Product>
-        {!availableForSale && <SoldOut>sold out</SoldOut>}
+        {!availableForSale && <SoldOut>not available</SoldOut>}
         {images.length > 0 && (
           <HoverCarousel hoverable={images.length > 1}>
             {images.map(image => (

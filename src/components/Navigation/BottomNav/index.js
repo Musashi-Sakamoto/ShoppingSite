@@ -54,8 +54,10 @@ const BottomNav = () => {
     variableWidth: true,
     speed: 500,
     swipe: false,
+    pauseOnHover: true,
+    autoplay: true,
     slidesToShow: 5,
-    slidesToScroll: 2,
+    slidesToScroll: 3,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
   }
