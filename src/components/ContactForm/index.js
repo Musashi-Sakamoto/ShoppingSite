@@ -12,7 +12,7 @@ const validationSchema = yup.object().shape({
   email: yup
     .string()
     .email('Invalid email')
-    .required('Required'),
+    .required('email is required'),
   message: yup.string().required(),
 })
 

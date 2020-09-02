@@ -29,7 +29,9 @@ const Footer = () => {
         <FooterHr />
         <FooterText>
           COPYRIGHT &copy;{' '}
-          <FooterLinkCompany to="/">2020 Alt.Fashion.</FooterLinkCompany>
+          <FooterLinkCompany href="https://alt.fashion/">
+            2020 Alt.Fashion.
+          </FooterLinkCompany>
         </FooterText>
       </FooterContainer>
       <SNS />
