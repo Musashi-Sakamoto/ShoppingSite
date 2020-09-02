@@ -24,7 +24,7 @@ export const SnsLi = styled.li`
   padding: 0 14px;
 `
 
-export const MenuLink = styled(Link)`
+export const MenuLink = styled.a`
   text-decoration: none;
   color: #303030;
   font-size: 13px;

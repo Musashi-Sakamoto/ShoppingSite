@@ -12,23 +12,24 @@ const SNS = ({ siteTitle }) => {
   return (
     <SnsUl>
       <SnsLi>
-        <MenuLink to="/">
+        <MenuLink href="https://twitter.com/shopaltfashion" target="_blank">
           <FontAwesomeIcon icon={faTwitter} />
         </MenuLink>
       </SnsLi>
       <SnsLi>
-        <MenuLink to="/">
+        <MenuLink
+          href="https://www.instagram.com/shopaltfashion"
+          target="_blank"
+        >
           <FontAwesomeIcon icon={faInstagram} />
         </MenuLink>{' '}
       </SnsLi>
       <SnsLi>
-        <MenuLink to="/">
+        <MenuLink
+          href="https://www.facebook.com/Alternative-Fashion-102172631618186"
+          target="_blank"
+        >
           <FontAwesomeIcon icon={faFacebookSquare} />
-        </MenuLink>{' '}
-      </SnsLi>
-      <SnsLi>
-        <MenuLink to="/">
-          <FontAwesomeIcon icon={faYoutube} />
         </MenuLink>{' '}
       </SnsLi>
     </SnsUl>
