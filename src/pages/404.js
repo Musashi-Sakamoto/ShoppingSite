@@ -1,12 +1,30 @@
 import React from 'react'
 
 import SEO from '~/components/seo'
+import { Container, StyledLink } from '~/utils/styles'
 
 const NotFoundPage = () => (
   <>
     <SEO title="404: Not found" />
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <Container>
+      <h1
+        style={{
+          marginTop: 48,
+          textAlign: 'center',
+        }}
+      >
+        NOT FOUND
+      </h1>
+      <p
+        style={{
+          marginTop: 48,
+          textAlign: 'center',
+        }}
+      >
+        The page you requested does not exist. Click{' '}
+        <StyledLink to="/">here</StyledLink> to continue shopping.
+      </p>
+    </Container>
   </>
 )
 
