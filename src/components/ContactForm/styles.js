@@ -30,9 +30,11 @@ export const FErrorMessage = styled.span`
 export const FField = styled(Field)`
   margin-bottom: 24px;
   border: 1px solid black;
+  border-radius: 2px;
 `
 
 export const FButton = styled.button`
+  border-radius: 2px;
   border: 2px solid black;
   background-color: white;
   width: 200px;

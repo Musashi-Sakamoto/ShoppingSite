@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { Img, StyledLink } from '~/utils/styles'
+import { StyledLink } from '~/utils/styles'
 
 import { breakpoints } from '../../utils/styles'
 
@@ -24,6 +24,9 @@ export const Link = styled(StyledLink)`
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  & > div {
+    height: 100%;
+  }
 `
 
 export const PageTitle = styled.h3`

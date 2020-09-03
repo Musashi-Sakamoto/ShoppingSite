@@ -55,6 +55,9 @@ export const Item = styled.div`
   height: 350px;
   width: 100%;
   border: 1px solid #bbb;
+  &:hover {
+    background-color: black;
+  }
   &:hover ${Label} {
     color: black;
     background-color: white;
