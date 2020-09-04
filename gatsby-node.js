@@ -5,8 +5,11 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   if (node.internal.type === `ShopifyCollection`) {
     const collectionSlug = node.handle.startsWith('upcoming')
       ? node.handle.split('-')[1]
-      : node.handle
+      : node.handle.split('-')[0]
     const isUpcoming = node.handle.startsWith('upcoming')
+    const topFive = node.handle.endsWith('altfront')
+      ? node.handle.split('-').slice(-1)[0]
+      : 'not-top5'
     console.log('createNodeField: ', collectionSlug, isUpcoming)
     createNodeField({
       node,
@@ -17,6 +20,11 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       node,
       name: `isUpcoming`,
       value: isUpcoming,
+    })
+    createNodeField({
+      node,
+      name: `topFive`,
+      value: topFive,
     })
   }
 }
