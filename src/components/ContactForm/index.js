@@ -1,7 +1,18 @@
-import React from 'react'
+import React, { useState, useCallback } from 'react'
 import { Formik, ErrorMessage } from 'formik'
+import { useDropzone } from 'react-dropzone'
 import * as yup from 'yup'
-import { FormContainer, FForm, FField, FErrorMessage, FButton } from './styles'
+import {
+  FormContainer,
+  FForm,
+  FField,
+  FErrorMessage,
+  FButton,
+  DropDownP,
+  DropDownDiv,
+  DropDownPHover,
+  FileName,
+} from './styles'
 
 const validationSchema = yup.object().shape({
   name: yup
@@ -17,10 +28,20 @@ const validationSchema = yup.object().shape({
 })
 
 const ContactForm = () => {
+  const [file, setFile] = useState({})
+
+  const onDrop = useCallback(acceptedFiles => {
+    console.log(acceptedFiles)
+    setFile(acceptedFiles[0])
+  }, [])
+
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop })
   const encode = data => {
-    return Object.keys(data)
-      .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-      .join('&')
+    const formData = new FormData()
+    Object.keys(data).forEach(k => {
+      formData.append(k, data[k])
+    })
+    return formData
   }
   return (
     <FormContainer>
@@ -33,8 +54,8 @@ const ContactForm = () => {
         onSubmit={(values, actions) => {
           fetch('/', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: encode({ 'form-name': 'work-with-us', ...values }),
+            // headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: encode({ 'form-name': 'work-with-us', ...values, file }),
           })
             .then(() => {
               alert('Success')
@@ -43,7 +64,10 @@ const ContactForm = () => {
             .catch(() => {
               alert('Error')
             })
-            .finally(() => actions.setSubmitting(false))
+            .finally(() => {
+              setFile({})
+              actions.setSubmitting(false)
+            })
         }}
         validationSchema={validationSchema}
       >
@@ -57,6 +81,17 @@ const ContactForm = () => {
           <label htmlFor="message">Message: </label>
           <ErrorMessage name="message" component={FErrorMessage} />
           <FField name="message" component="textarea" rows="5" />
+          <DropDownDiv {...getRootProps()}>
+            <input {...getInputProps()} name="file" />
+            {isDragActive ? (
+              <DropDownPHover>Drop your resume here ...</DropDownPHover>
+            ) : (
+              <DropDownP>
+                Drag 'n' drop some resume here, or click to select your resume
+              </DropDownP>
+            )}
+            {file.name && <FileName>{file.name}</FileName>}
+          </DropDownDiv>
           <FButton type="submit">Send</FButton>
         </FForm>
       </Formik>
