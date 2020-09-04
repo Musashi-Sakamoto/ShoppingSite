@@ -3,10 +3,23 @@ const path = require(`path`)
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
   if (node.internal.type === `ShopifyCollection`) {
-    const collectionSlug = node.handle.startsWith('upcoming')
-      ? node.handle.split('-')[1]
-      : node.handle
     const isUpcoming = node.handle.startsWith('upcoming')
+    const isTopFive = node.handle.endsWith('altfront')
+    let collectionSlug = node.handle
+    if (isUpcoming) {
+      const firstPart = collectionSlug.split('-').shift()
+      collectionSlug = collectionSlug.substring(
+        collectionSlug.indexOf(`${firstPart}-`) + `${firstPart}-`.length
+      )
+    }
+    let topFive = 'not-top5'
+    if (isTopFive) {
+      topFive = collectionSlug.split('-').pop()
+      collectionSlug = collectionSlug.substring(
+        0,
+        collectionSlug.indexOf(`-${topFive}`)
+      )
+    }
     console.log('createNodeField: ', collectionSlug, isUpcoming)
     createNodeField({
       node,
@@ -17,6 +30,11 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       node,
       name: `isUpcoming`,
       value: isUpcoming,
+    })
+    createNodeField({
+      node,
+      name: `topFive`,
+      value: topFive,
     })
   }
 }
