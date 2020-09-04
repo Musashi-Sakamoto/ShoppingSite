@@ -12,6 +12,29 @@ export const FormContainer = styled.div`
     padding-top: 32px;
   }
 `
+export const DropDownDiv = styled.div`
+  cursor: pointer;
+  outline: none;
+`
+
+export const FileName = styled.p`
+  margin-bottom: 8px;
+  font-size: 0.6rem;
+  padding-left: 36px;
+`
+
+export const DropDownP = styled.p`
+  margin-bottom: 16px;
+  font-size: 0.8rem;
+  text-align: center;
+`
+
+export const DropDownPHover = styled.p`
+  margin-bottom: 16px;
+  font-size: 0.8rem;
+  text-align: center;
+  color: lightgray;
+`
 
 export const FForm = styled(Form)`
   min-width: 600px;
