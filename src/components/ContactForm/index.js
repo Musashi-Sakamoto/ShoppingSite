@@ -84,10 +84,10 @@ const ContactForm = () => {
           <DropDownDiv {...getRootProps()}>
             <input {...getInputProps()} name="file" />
             {isDragActive ? (
-              <DropDownPHover>Drop your resume here ...</DropDownPHover>
+              <DropDownPHover>Drop your file here ...</DropDownPHover>
             ) : (
               <DropDownP>
-                Drag 'n' drop some resume here, or click to select your resume
+                Drag 'n' drop some file here, or click to select some file
               </DropDownP>
             )}
             {file.name && <FileName>{file.name}</FileName>}

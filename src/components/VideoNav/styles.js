@@ -5,9 +5,24 @@ import { breakpoints } from '../../utils/styles'
 
 export const Container = styled.div`
   position: relative;
-  height: 760px;
+  overflow: hidden;
+  min-height: 700px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    'top1 top1 top1 top2 top2 top2'
+    'bottom1 bottom1 bottom2 bottom2 bottom3 bottom3';
   @media (max-width: ${breakpoints.m}px) {
     height: auto;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas:
+      'top1'
+      'top2'
+      'bottom1'
+      'bottom2'
+      'bottom3';
   }
 `
 
@@ -15,18 +30,27 @@ export const Image = styled(Img)`
   height: 350px;
   opacity: 0;
   transition: opacity 1s;
+  width: 100%;
   @media (max-width: ${breakpoints.m}px) {
+    min-height: auto;
     opacity: 1;
     height: 160px;
-    width: 100%;
   }
 `
 
-export const FlexContainer = styled.div`
-  display: flex;
-  @media (max-width: ${breakpoints.m}px) {
-    flex-direction: column;
-  }
+export const IframeWrapper = styled.div`
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 76%;
+`
+
+export const Iframe = styled.iframe`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
 `
 
 export const Label = styled.span`
@@ -52,7 +76,7 @@ export const Label = styled.span`
 export const Item = styled.div`
   position: relative;
   cursor: pointer;
-  height: 350px;
+  height: auto;
   width: 100%;
   border: 1px solid #bbb;
   &:hover {
@@ -75,7 +99,7 @@ export const Item = styled.div`
 export const VideoDiv = styled.div`
   background-color: black;
   position: absolute;
-  top: -60px;
+  top: 0;
   left: 0;
   z-index: -9999;
   width: 100%;
