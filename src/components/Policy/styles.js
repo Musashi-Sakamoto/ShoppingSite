@@ -23,7 +23,8 @@ export const Body = styled.div`
   h3 {
     margin: 16px 0;
   }
-  & > p {
+  & p,
+  li {
     font-size: 0.75rem;
   }
 `
