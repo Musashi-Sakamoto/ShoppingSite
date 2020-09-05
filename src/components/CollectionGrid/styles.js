@@ -10,8 +10,7 @@ export const Grid = styled.div`
   align-items: flex-end;
   grid-gap: 1.5rem;
   @media (max-width: ${breakpoints.m}px) {
-    padding: 20px 0;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
   @media (max-width: ${breakpoints.s}px) {
     padding: 20px 0;
@@ -33,6 +32,9 @@ export const PageTitle = styled.h3`
   text-align: center;
   grid-column: 1 / span 3;
   @media (max-width: ${breakpoints.m}px) {
+    grid-column: 1 / span 2;
+  }
+  @media (max-width: ${breakpoints.s}px) {
     grid-column: 1 / span 1;
   }
 `
