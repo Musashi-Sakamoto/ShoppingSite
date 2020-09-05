@@ -14,7 +14,7 @@ const ProductCell = ({ images, handle, title, price, availableForSale }) => {
           <HoverCarousel hoverable={images.length > 1}>
             {images.map(image => (
               <Img
-                fluid={image.localFile.childImageSharp.fluid}
+                fluid={image && image.localFile.childImageSharp.fluid}
                 key={image.id}
                 alt={title}
               />

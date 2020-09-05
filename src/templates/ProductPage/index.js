@@ -99,7 +99,7 @@ const ProductPage = ({ data }) => {
             >
               {product.images.map(image => (
                 <Img
-                  fluid={image.localFile.childImageSharp.fluid}
+                  fluid={image && image.localFile.childImageSharp.fluid}
                   key={image.id}
                   alt={product.title}
                 />
