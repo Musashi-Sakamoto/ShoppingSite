@@ -36,6 +36,7 @@ export const Header = styled.p`
   font-size: 0.75rem;
   margin-top: 80px;
   @media (max-width: ${breakpoints.m}px) {
+    margin-top: 60px;
     font-size: 0.8rem;
     text-align: center;
   }
