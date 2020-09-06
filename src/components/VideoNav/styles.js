@@ -6,7 +6,7 @@ import { breakpoints } from '../../utils/styles'
 export const Container = styled.div`
   position: relative;
   overflow: hidden;
-  min-height: 700px;
+  max-height: 900px;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -14,6 +14,7 @@ export const Container = styled.div`
     'top1 top1 top1 top2 top2 top2'
     'bottom1 bottom1 bottom2 bottom2 bottom3 bottom3';
   @media (max-width: ${breakpoints.m}px) {
+    min-height: 700px;
     height: auto;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(5, 1fr);
@@ -27,7 +28,7 @@ export const Container = styled.div`
 `
 
 export const Image = styled(Img)`
-  height: 350px;
+  height: 450px;
   opacity: 0;
   transition: opacity 1s;
   width: 100%;

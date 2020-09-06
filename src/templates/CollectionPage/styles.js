@@ -5,7 +5,7 @@ export const CollectionImage = styled(Img)``
 
 export const Banner = styled.div`
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 */
+  padding-bottom: 25%; /* 4:1 */
   & > * {
     z-index: -9999;
     pointer-events: none;
