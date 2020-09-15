@@ -33,17 +33,14 @@ const Navigation = ({ setIsSideBarOpen }) => {
   const isSmall = useMediaQuery({ query: `(max-width: ${breakpoints.m}px)` })
   return (
     <Wrapper>
-      {!isSmall && (
-        <>
-          <SNS />
-          <CartUl>
-            <MenuLink to="/cart">
-              {hasItems && <CartCounter>{quantity}</CartCounter>}
-              <FontAwesomeIcon icon={faShoppingCart} size="lg" />
-            </MenuLink>
-          </CartUl>
-        </>
-      )}
+      {!isSmall && <SNS />}
+
+      <CartUl>
+        <MenuLink to="/cart">
+          {hasItems && <CartCounter>{quantity}</CartCounter>}
+          <FontAwesomeIcon icon={faShoppingCart} size="lg" />
+        </MenuLink>
+      </CartUl>
 
       <TitleDiv>
         <MenuLink to="/">
