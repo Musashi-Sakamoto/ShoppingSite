@@ -70,7 +70,9 @@ export const CartCounter = styled.span`
   background-color: #303030;
   color: white;
   border-radius: 50%;
-  padding: 0 4px;
+  text-align: center;
+  width: 12px;
+  height: 12px;
   font-size: 0.4rem;
   margin: -10px;
   z-index: 20;
@@ -79,5 +81,9 @@ export const CartCounter = styled.span`
   top: -1px;
   @media (max-width: ${breakpoints.m}px) {
     font-size: 1rem;
+    width: 24px;
+    height: 24px;
+    right: -5px;
+    top: -5px;
   }
 `
