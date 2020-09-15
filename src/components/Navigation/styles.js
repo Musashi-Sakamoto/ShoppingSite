@@ -55,14 +55,14 @@ export const MenuLink = styled(Link)`
   color: #303030;
   font-size: 13px;
   position: relative;
+  &:hover {
+    color: #d4b062;
+  }
   @media (max-width: ${breakpoints.m}px) {
     font-size: 1.4rem;
     &:hover {
       color: #303030;
     }
-  }
-  &:hover {
-    color: #d4b062;
   }
 `
 
@@ -81,8 +81,8 @@ export const CartCounter = styled.span`
   top: -1px;
   @media (max-width: ${breakpoints.m}px) {
     font-size: 1rem;
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     right: -5px;
     top: -5px;
   }
