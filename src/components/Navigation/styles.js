@@ -55,14 +55,14 @@ export const MenuLink = styled(Link)`
   color: #303030;
   font-size: 13px;
   position: relative;
+  &:hover {
+    color: #d4b062;
+  }
   @media (max-width: ${breakpoints.m}px) {
     font-size: 1.4rem;
     &:hover {
       color: #303030;
     }
-  }
-  &:hover {
-    color: #d4b062;
   }
 `
 
