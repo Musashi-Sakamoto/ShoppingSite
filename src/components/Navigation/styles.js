@@ -81,8 +81,8 @@ export const CartCounter = styled.span`
   top: -1px;
   @media (max-width: ${breakpoints.m}px) {
     font-size: 1rem;
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     right: -5px;
     top: -5px;
   }
