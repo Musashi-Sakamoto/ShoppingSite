@@ -28,6 +28,7 @@ export const BarButton = styled.button`
   font-size: 1.5rem;
   border: none;
   outline: none;
+  padding: 0;
 `
 
 export const CartDiv = styled.div`
