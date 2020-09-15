@@ -80,10 +80,10 @@ export const CartCounter = styled.span`
   right: -1px;
   top: -1px;
   @media (max-width: ${breakpoints.m}px) {
-    font-size: 1rem;
-    width: 20px;
-    height: 20px;
-    right: -5px;
-    top: -5px;
+    font-size: 0.75rem;
+    width: 16px;
+    height: 16px;
+    right: -2px;
+    top: -2px;
   }
 `
