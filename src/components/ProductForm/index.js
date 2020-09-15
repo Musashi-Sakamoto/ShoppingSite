@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect, useCallback } from 'react'
 import find from 'lodash/find'
 import isEqual from 'lodash/isEqual'
 import PropTypes from 'prop-types'
+import Notifications, { notify } from 'react-notify-toast'
 
 import StoreContext from '~/context/StoreContext'
 
@@ -76,6 +77,10 @@ const ProductForm = ({ product }) => {
 
   const handleAddToCart = () => {
     addVariantToCart(productVariant.shopifyId, quantity)
+    notify.show('item added', 'custom', 3000, {
+      background: '#000000',
+      text: '#ffffff',
+    })
   }
 
   /* 
@@ -109,6 +114,7 @@ const ProductForm = ({ product }) => {
 
   return (
     <>
+      <Notifications />
       <PriceTag>{price}</PriceTag>
       <Label htmlFor="quantity">QUANTITY</Label>
       <Quantity>
