@@ -11,8 +11,9 @@ import {
   Wrapper,
   TitleDiv,
   LogoImg,
-  CartUl,
+  CartDiv,
   BarButton,
+  OuterWrapper,
 } from './styles'
 import TopNav from './TopNav'
 import BottomNav from './BottomNav'
@@ -32,34 +33,36 @@ const Navigation = ({ setIsSideBarOpen }) => {
   const [hasItems, quantity] = useQuantity()
   const isSmall = useMediaQuery({ query: `(max-width: ${breakpoints.m}px)` })
   return (
-    <Wrapper>
-      {!isSmall && <SNS />}
+    <OuterWrapper>
+      <Wrapper>
+        {!isSmall && <SNS />}
 
-      <CartUl>
-        <MenuLink to="/cart">
-          {hasItems && <CartCounter>{quantity}</CartCounter>}
-          <FontAwesomeIcon icon={faShoppingCart} size="lg" />
-        </MenuLink>
-      </CartUl>
+        <CartDiv>
+          <MenuLink to="/cart">
+            {hasItems && <CartCounter>{quantity}</CartCounter>}
+            <FontAwesomeIcon icon={faShoppingCart} size="lg" />
+          </MenuLink>
+        </CartDiv>
 
-      <TitleDiv>
-        <MenuLink to="/">
-          <LogoImg src="/alt_logo.png" alt="logo" />
-        </MenuLink>
-        {isSmall && (
-          <BarButton onClick={() => setIsSideBarOpen(true)}>
-            <FontAwesomeIcon icon={faBars} />
-          </BarButton>
+        <TitleDiv>
+          <MenuLink to="/">
+            <LogoImg src="/alt_logo.png" alt="logo" />
+          </MenuLink>
+          {isSmall && (
+            <BarButton onClick={() => setIsSideBarOpen(true)}>
+              <FontAwesomeIcon icon={faBars} />
+            </BarButton>
+          )}
+        </TitleDiv>
+
+        {!isSmall && (
+          <>
+            <TopNav />
+            <BottomNav />
+          </>
         )}
-      </TitleDiv>
-
-      {!isSmall && (
-        <>
-          <TopNav />
-          <BottomNav />
-        </>
-      )}
-    </Wrapper>
+      </Wrapper>
+    </OuterWrapper>
   )
 }
 

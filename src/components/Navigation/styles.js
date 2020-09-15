@@ -7,10 +7,17 @@ export const Wrapper = styled.div`
   position: relative;
   background-color: white;
   @media (max-width: ${breakpoints.m}px) {
+    top: 0;
     position: fixed;
     width: 100%;
     z-index: 1;
   }
+`
+
+export const OuterWrapper = styled.div`
+  margin: 0;
+  padding: 0;
+  position: relative;
 `
 
 export const BarButton = styled.button`
@@ -23,13 +30,13 @@ export const BarButton = styled.button`
   outline: none;
 `
 
-export const CartUl = styled.ul`
+export const CartDiv = styled.div`
   position: absolute;
   top: 10px;
   right: 20px;
   @media (max-width: ${breakpoints.m}px) {
     right: none;
-    left: 0px;
+    left: 10px;
     top: 20px;
   }
 `
@@ -62,7 +69,6 @@ export const CartCounter = styled.span`
   border-radius: 20px;
   padding: 0 4px;
   font-size: 0.4rem;
-  float: right;
   margin: -10px;
   z-index: 20;
   position: absolute;
