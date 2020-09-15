@@ -27,6 +27,11 @@ export const CartUl = styled.ul`
   position: absolute;
   top: 10px;
   right: 20px;
+  @media (max-width: ${breakpoints.m}px) {
+    right: none;
+    left: 0px;
+    top: 20px;
+  }
 `
 
 export const TitleDiv = styled.div`
@@ -42,6 +47,7 @@ export const MenuLink = styled(Link)`
   text-decoration: none;
   color: #303030;
   font-size: 13px;
+  position: relative;
   @media (max-width: ${breakpoints.m}px) {
     font-size: 1.4rem;
   }
@@ -57,6 +63,9 @@ export const CartCounter = styled.span`
   padding: 0 4px;
   font-size: 0.4rem;
   float: right;
-  margin: -5px;
+  margin: -10px;
   z-index: 20;
+  position: absolute;
+  right: -1px;
+  top: -1px;
 `
