@@ -78,7 +78,7 @@ const ProductForm = ({ product }) => {
   const handleAddToCart = () => {
     addVariantToCart(productVariant.shopifyId, quantity)
     notify.show('item added', 'custom', 3000, {
-      background: '#000000',
+      background: '#303030',
       text: '#ffffff',
     })
   }
