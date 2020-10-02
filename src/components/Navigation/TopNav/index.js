@@ -13,7 +13,7 @@ const TopNav = () => {
           <MenuLink to="/upcoming-release">Upcoming Release</MenuLink>
         </TopMenuListItem>
         <TopMenuListItem>
-          <MenuLink to="/work-with-us">Work With Us</MenuLink>
+          <MenuLink to="/collaborate-with-us">Collaborate With Us</MenuLink>
         </TopMenuListItem>
       </TopMenuList>
     </TopContainer>

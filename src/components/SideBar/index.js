@@ -86,7 +86,9 @@ const SideBar = ({ setIsSideBarOpen }) => {
           </SidebarActionLink>
         </SideBarListItem>
         <SideBarListItem>
-          <SidebarActionLink to="/work-with-us">Work With Us</SidebarActionLink>
+          <SidebarActionLink to="/collaborate-with-us">
+            Collaborate With Us
+          </SidebarActionLink>
         </SideBarListItem>
         <HR style={{ marginTop: '20px' }} />
         <SideBarListItem>
