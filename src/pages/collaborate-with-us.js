@@ -3,10 +3,13 @@ import SEO from '~/components/seo'
 import { Container } from '~/utils/styles'
 import ContactForm from '~/components/ContactForm'
 
-const WorkWithUsPage = () => {
+const CollaborateWithUsPage = () => {
   return (
     <>
-      <SEO title="WorkWithUsPage" keywords={[`alt.fashion`, `work with us`]} />
+      <SEO
+        title="Collaborate with us"
+        keywords={[`alt.fashion`, `collaborate with us`]}
+      />
       <Container>
         <ContactForm />
       </Container>
@@ -14,4 +17,4 @@ const WorkWithUsPage = () => {
   )
 }
 
-export default WorkWithUsPage
+export default CollaborateWithUsPage

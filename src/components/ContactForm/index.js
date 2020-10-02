@@ -55,7 +55,11 @@ const ContactForm = () => {
           fetch('/', {
             method: 'POST',
             // headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: encode({ 'form-name': 'work-with-us', ...values, file }),
+            body: encode({
+              'form-name': 'collaborate-with-us',
+              ...values,
+              file,
+            }),
           })
             .then(() => {
               alert('Success')
@@ -71,7 +75,7 @@ const ContactForm = () => {
         }}
         validationSchema={validationSchema}
       >
-        <FForm name="work-with-us" data-netlify={true}>
+        <FForm name="collaborate-with-us" data-netlify={true}>
           <label htmlFor="name">Name: </label>
           <ErrorMessage name="name" component={FErrorMessage} />
           <FField name="name" />
