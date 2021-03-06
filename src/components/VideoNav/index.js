@@ -105,12 +105,12 @@ const VideoNav = () => {
           gridArea: 'bottom3',
         }}
       >
-        <Link to={`/collections/${edges[4].node.fields.slug}/?page=1`}>
+        <Link to={`/collections/${edges[3].node.fields.slug}/?page=1`}>
           <Image
-            fluid={edges[4].node.image.localFile.childImageSharp.fluid}
-            alt={edges[4].node.title}
+            fluid={edges[3].node.image.localFile.childImageSharp.fluid}
+            alt={edges[3].node.title}
           />
-          <Label>{edges[4].node.title}</Label>
+          <Label>{edges[3].node.title}</Label>
         </Link>
       </Item>
       {!isSmall && (

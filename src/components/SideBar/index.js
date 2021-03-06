@@ -96,15 +96,15 @@ const SideBar = ({ setIsSideBarOpen }) => {
         </SideBarListItem>
         <HR style={{ marginBottom: '20px' }} />
         <SideBarListItemForPolicies>
-          <SidebarActionLink to="/privacy">Privacy Policy</SidebarActionLink>
+          <SidebarActionLink to="/">Privacy Policy</SidebarActionLink>
         </SideBarListItemForPolicies>
         <SideBarListItemForPolicies>
-          <SidebarActionLink to="/terms-conditions">
+          <SidebarActionLink to="/">
             Terms & Conditions
           </SidebarActionLink>
         </SideBarListItemForPolicies>
         <SideBarListItemForPolicies>
-          <SidebarActionLink to="/refund">Refund Policy</SidebarActionLink>
+          <SidebarActionLink to="/">Refund Policy</SidebarActionLink>
         </SideBarListItemForPolicies>
       </SideBarList>
     </Container>
